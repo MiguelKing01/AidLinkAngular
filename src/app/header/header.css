@@ -1,0 +1,56 @@
+.contenedor-header {
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 3px solid #f28c38;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+}
+
+.container-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.container-menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.ingreso {
+  border: none;
+  font-weight: 500;
+  padding: 9% 18px;
+  border-radius: 10px;
+  color: white;
+  background-color: #f28c38;
+  margin-top: 18px;
+}
+
+.ingreso:hover{
+    transform: translateY(-2px);
+}
+
+.cajas {
+  padding: 15px 22px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.container-logo {
+  flex: 1;
+}
+
+.logo-text {
+    height: 60px;
+  width: 18%;
+}
+.logo-icon {
+    height: 70px;
+  width: 10%;
+}
