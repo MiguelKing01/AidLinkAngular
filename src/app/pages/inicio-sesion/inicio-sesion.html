@@ -7,14 +7,15 @@
     </section>
     <section class="mail">
         <label for="usuario" class="label">Usuario</label> <br>
-        <input type="text" placeholder="Ej: Andres321" class="input">
+        <input id="usuario" [(ngModel)]="correo" placeholder="Ej: Andres321" class="input">
     </section>
     <section class="password">
-        <label for="contraseña" class="label">Contraseña</label> <br>
-        <input type="text" class="input">
+        <label for="contrasena" class="label">Contraseña</label> <br>
+        <input id="contrasena" [(ngModel)]="contrasena" type="text" class="input">
+        <div id="error" class="error"></div>
     </section>
     <section class="info">
-        <button class="btn">Iniciar Sesión</button><br>
+        <button id="BTNIS" (click)="IniciarSesion()" class="btn">Iniciar Sesión</button><br>
         <label for="pregunta" class="question">¿No tienes cuenta?</label><br>
         <a class="a" routerLink="/registro">Registrarse</a>
     </section>
