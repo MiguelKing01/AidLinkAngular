@@ -1,0 +1,84 @@
+.contenido {
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 900;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.solicitudes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* border: 1px solid black; */
+}
+
+.cajas {
+    max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding-left: 90px;  
+}
+
+.figura{
+    display: contents;
+    font-size: 160px;
+    color: rgba(255, 123, 0, 0.87);
+}
+
+.caja {
+  border: 0.5px solid rgb(191, 191, 191);
+  height: 280px;
+  width: 400px;
+  border-radius: 80px;
+  margin: 50px 100px 50px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 30px 35px 30px;
+  box-shadow: 0 0 7px slategray;
+  font-weight: bold;
+}
+
+.texto{
+    padding: 20px 0 0 0;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.btn{
+    padding: 8px 45px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 123, 0, 0.87);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+    cursor: pointer;
+    background-color: rgb(255, 106, 0);
+    box-shadow: 2px 2px 5px rgb(255, 106, 0);
+}
+
+.btn:active{
+    transform: translateY(0.5px);
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.contenedor-footer{
+    width: 98.5%;
+    background-color: rgb(219, 213, 209);
+    /* display: flex;
+    justify-content: center; */
+    display: block;
+    text-align: center;
+    padding: 10px;
+}

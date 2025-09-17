@@ -1,0 +1,111 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.contenedor-header {
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 3px solid #f28c38;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+}
+
+.container-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.container-menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.cajas {
+  padding: 15px 22px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.container-menu .cajas {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 1000;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu li {
+  padding: 0px 16px;
+}
+
+.menu li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.menu li:hover {
+  background: #f5f5f5;
+}
+
+.btn{
+    color: black;
+    background-color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.text {
+  color: black;
+}
+
+.container-logo {
+  flex: 1;
+}
+
+.logo-text {
+  height: 60px;
+  width: 18%;
+}
+.logo-icon {
+  height: 70px;
+  width: 10%;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.icono {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

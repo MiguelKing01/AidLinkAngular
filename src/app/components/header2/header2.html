@@ -1,0 +1,28 @@
+<header class="contenedor-header">
+  <section class="container-logo">
+    <img src="images/logo-sin-nombre-fondo-blanco2.png" alt="Logo AidLink" class="logo-icon" />
+    <img src="images/aidLink-fondo-blanco2.png" alt="Texto AidLink" class="logo-text" />
+  </section>
+  <nav class="container-menu">
+    <ul>
+      <li class="cajas"><a routerLink="/inicio" class="text">INICIO</a></li>
+      <li class="cajas">NOSOTROS</li>
+      <li class="cajas">
+        <button class="btn"
+                (click)="toggleMenu($event)"
+                aria-haspopup="true"
+                [attr.aria-expanded]="menuOpen">
+          Menu
+        </button>
+      
+        <ul class="menu" *ngIf="menuOpen" role="menu" (click)="$event.stopPropagation()">
+          <li role="menuitem"><a routerLink="/peticion">Hacer petición</a></li>
+          <li role="menuitem"><a routerLink="/donar">Hacer donación</a></li>
+        </ul>
+      </li>
+      
+      <li class="icono"><i class="bi bi-person-circle"></i></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</header>
