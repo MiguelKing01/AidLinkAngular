@@ -29,6 +29,7 @@ export class InicioSesion {
         );
 
         if (encontrado) {
+          this.usuarioService.setUsuarioId(encontrado.id!);
           this.router.navigate(['/inicio']);
         } else {
           const error = document.getElementById('error')

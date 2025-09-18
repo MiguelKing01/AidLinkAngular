@@ -5,7 +5,9 @@
       <a routerLink="/inicio"><i class="bi bi-arrow-left-circle-fill"></i></a>
       <h3 class="back">Regresar</h3>
     </section>
-    <section class="texto"><p><a routerLink="/inicio">Inicio</a>/<a routerLink="donacion">Hacer petición</a></p></section>
+    <section class="texto">
+      <p><a routerLink="/inicio">Inicio</a>/<a routerLink="donacion">Hacer petición</a></p>
+    </section>
   </section>
 
   <section class="content">
@@ -23,6 +25,13 @@
         <section class="caja">
           <label for="descripcion" class="text">descripción</label> <br />
           <input type="text" class="input" />
+        </section>
+        <section class="caja">
+          <label for="Tipo" class="text">Tipo</label> <br />
+          <select name="Tipo" id="Tipo">
+            <option value="1">Objeto</option>
+            <option value="2">Dinero</option>
+          </select>
         </section>
         <section class="caja">
           <label for="sireccion" class="text">Dirección</label> <br />

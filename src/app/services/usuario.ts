@@ -16,6 +16,8 @@ export interface Usuario {
 export class UsuarioService {
   private apiUrl = 'http://localhost:8080/Usuario';
 
+  private usuarioIdActual: number | null = null;
+
   constructor(private http: HttpClient) {}
 
   getUsuario(): Observable<Usuario[]> {
@@ -36,4 +38,13 @@ export class UsuarioService {
   actualizarUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(`${this.apiUrl}/actualizar`, usuario);
   }
+
+  setUsuarioId(id: number) {
+    this.usuarioIdActual = id;
+  }
+
+  getUsuarioIdActual(): number | null {
+    return this.usuarioIdActual;
+  }
+  
 }
