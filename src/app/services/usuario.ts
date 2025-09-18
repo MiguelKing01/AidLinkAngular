@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Usuario {
-  id: number;
+  id?: number;
   nombre: String;
   apellido: String;
   correo: String;
@@ -22,8 +22,8 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(`${this.apiUrl}/todos`);
   }
 
-  crearUsuario(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.apiUrl}/crear`, usuario);
+  crearUsuario(usuario: Usuario): Observable<Usuario[]> {
+    return this.http.post<Usuario[]>(`${this.apiUrl}/crear`, usuario);
   }
 
   getUsuarioId(id: number): Observable<Usuario[]> {

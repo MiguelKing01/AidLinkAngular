@@ -1,29 +1,60 @@
 <app-header></app-header>
 
 <section class="principal">
-    <article class="contenido">
-      <section class="logo">
-        <header class="header"><h1>Registrate</h1></header>
-        <img src="images/logo-con-nombre-fondo-anaranjado.jpg" alt="logo">
-      </section>
-      <section class="mail">
-          <label for="usuario" class="label">Usuario</label> <br>
-          <input type="text" placeholder="Ej: Andres321" class="input">
-      </section>
-      <section class="password">
-          <label for="contraseña" class="label">Contraseña</label> <br>
-          <input type="text" class="input">
-      </section>
-      <section class="password-confirm">
-        <label for="contraseña" class="label">Confirmar Contraseña</label> <br>
-        <input type="text" class="input">
+  <article class="contenido">
+    <section class="logo">
+      <header class="header"><h1>Registrate</h1></header>
+      <img src="images/logo-con-nombre-fondo-anaranjado.jpg" alt="logo" />
     </section>
-      <section class="info">
-          <button class="btn">Registrarse</button><br>
-          <label for="pregunta" class="question">¿Ya tienes cuenta?</label><br>
-          <a class="a" routerLink="/ingresar">Iniciar Sesión</a>
-      </section>
-    </article>
-  </section>
-  
+    <section class="name">
+      <label for="name" class="label">Nombre</label> <br />
+      <input
+        id="name"
+        [(ngModel)]="nuevoUsuario.nombre"
+        type="text"
+        placeholder="Ej: Andres"
+        class="input"
+      />
+    </section>
+    <br>
+    <section class="lastname">
+      <label for="lastname" class="label">Apellido</label> <br />
+      <input
+        id="lastname"
+        [(ngModel)]="nuevoUsuario.apellido"
+        type="text"
+        placeholder="Ej: García"
+        class="input"
+      />
+    </section>
+    <br>
+
+    <section class="mail">
+      <label for="mail" class="label">Correo</label> <br />
+      <input
+        id="mail"
+        [(ngModel)]="nuevoUsuario.correo"
+        type="email"
+        placeholder="Ej: correo@email.com"
+        class="input"
+      />
+    </section>
+
+    <section class="password">
+      <label for="contraseña" class="label">Contraseña</label> <br />
+      <input id="contraseña" [(ngModel)]="nuevoUsuario.contrasena" type="password" class="input" />
+    </section>
+
+    <section class="password-confirm">
+      <label for="contraseña2" class="label">Confirmar Contraseña</label> <br />
+      <input id="contraseña2" type="password" class="input" />
+    </section>
+    <section class="info">
+      <button (click)="registrarUsuario()" class="btn">Registrarse</button><br />
+      <label for="pregunta" class="question">¿Ya tienes cuenta?</label><br />
+      <a class="a" routerLink="/ingresar">Iniciar Sesión</a>
+    </section>
+  </article>
+</section>
+
 <app-footer></app-footer>

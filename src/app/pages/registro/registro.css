@@ -28,7 +28,7 @@
     margin-bottom: 50px;
 }
 
-.mail{
+.mail, .name, .lastname{
     padding: 0 80px;
 }
 
