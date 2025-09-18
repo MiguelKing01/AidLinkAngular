@@ -23,7 +23,10 @@ export class UsuarioService {
   }
 
   crearUsuario(usuario: Usuario): Observable<Usuario[]> {
-    return this.http.post<Usuario[]>(`${this.apiUrl}/crear`, usuario);
+    const headers = new HttpHeaders({
+      Authorization: 'Basic ' + btoa('client:123456'),
+    });
+    return this.http.post<Usuario[]>(`${this.apiUrl}/crear`, usuario, {headers});
   }
 
   getUsuarioId(id: number): Observable<Usuario[]> {
