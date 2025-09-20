@@ -1,113 +1,102 @@
-.principal {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
+* {
+  font-family: 'Poppins', sans-serif;
 }
 
-.contenido {
-  min-width: 800px;
-  min-height: 900px;
-  background-color: rgb(255, 135, 55);
-  border-radius: 50px;
-}
-
-.header {
-  margin-bottom: 20px;
-}
-
-.logo {
+.registro-contenedor {
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin-bottom: 50px;
+  min-height: 90vh;
+  background: #ffffff; 
 }
 
-.mail {
-  padding: 0 80px;
-}
-
-.label {
-  font-size: 35px;
-  padding-bottom: 20px;
-  font-weight: 550;
+.registro-form {
+  background: #e67e22; 
+  padding: 3rem;
+  border-radius: 25px;
+  width: 400px;
+  text-align: center;
   color: white;
 }
 
-h1 {
-  font-size: 35px;
-  color: white;
+.registro-titulo {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.password {
-  margin-top: 70px;
-  padding: 0 80px;
-  margin-bottom: 80px;
+.registro-logo {
+  width: 80px;
+  margin: 0 auto 1rem auto;
+  display: block;
 }
 
-.input {
+.registro-label {
+  display: block;
+  text-align: left;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.registro-input {
   width: 100%;
-  padding: 10px 0px 5px 0px;
-  background-color: rgb(255, 135, 55);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 5px solid white;
-  margin-top: 20px;
-  font-size: 20px;
+  border: none;
+  border-bottom: 3px solid white;
+  background: transparent;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
   color: white;
   outline: none;
+  font-size: 0.95rem;
 }
 
-.input:focus {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 5px solid white;
-  border-bottom-style: groove;
-  box-shadow: 0 8px 16px rgb(220, 220, 220);
+.registro-input:hover {
+  box-shadow: 3px 2px 10px #f0e5d8;
 }
 
-.info {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  flex-direction: column;
+.registro-input:focus {
+  box-shadow: 3px 5px 10px #f0e5d8;
 }
 
-.btn {
-  padding: 12px 30px;
-  border-radius: 35px;
-  color: rgb(255, 135, 55);
-  font-weight: 600;
+.registro-input::placeholder {
+  color: #f0e5d8; 
+}
+
+.registro-btn {
+  margin-top: 2rem;
+  background: white;
+  color: #e67e22;
   border: none;
-  font-size: 18px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
 }
 
-.question {
-  font-weight: 900;
-  font-size: 20px;
-}
-
-.a {
-  font-size: 21px;
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-
-.a:hover {
+.registro-btn:hover {
+  background: #f4f4f4;
   transform: translateY(-2px);
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgb(187, 187, 187);
-  text-decoration: wavy;
 }
 
-.error{
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 40px;
-  color: red;
+.registro-texto {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: black;
+  font-weight: bold;
+}
+
+.registro-link {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registro-link:hover {
+  text-decoration: underline;
 }

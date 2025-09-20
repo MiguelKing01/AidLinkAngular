@@ -1,24 +1,29 @@
 <app-header></app-header>
-<section class="principal">
-  <article class="contenido">
-    <section class="logo">
-      <header class="header"><h1>Iniciar Sesión</h1></header>
-      <img src="images/logo-con-nombre-fondo-anaranjado.jpg" alt="logo" />
-    </section>
-    <section class="mail">
-      <label for="usuario" class="label">Correo</label> <br />
-      <input id="usuario" [(ngModel)]="correo" placeholder="Ej: Andres@gmail.com" class="input" />
-    </section>
-    <section class="password">
-      <label for="contrasena" class="label">Contraseña</label> <br />
-      <input id="contrasena" [(ngModel)]="contrasena" type="text" class="input" />
-      <div id="error" class="error"></div>
-    </section>
-    <section class="info">
-      <button id="BTNIS" (click)="IniciarSesion()" class="btn">Iniciar Sesión</button><br />
-      <label for="pregunta" class="question">¿No tienes cuenta?</label><br />
-      <a class="a" routerLink="/registro">Registrarse</a>
-    </section>
-  </article>
-</section>
+<div class="registro-contenedor">
+  <form class="registro-form">
+    <h1 class="registro-titulo">Iniciar Sesión</h1>
+    <img
+      src="../images/logo-con-nombre-fondo-anaranjado.png"
+      alt="Logo AidLink"
+      class="registro-logo"
+    />
+
+    <label for="Usuario" class="registro-label">Usuario</label>
+    <input
+      type="text"
+      [(ngModel)]="correo"
+      id="Usuario"
+      placeholder="Ej: Andres321"
+      class="registro-input"
+    />
+
+    <label for="Contraseña" class="registro-label">Contraseña</label>
+    <input type="password" [(ngModel)]="contrasena" id="Contraseña" class="registro-input" />
+
+    <button class="registro-btn" (click)="IniciarSesion()">Iniciar Sesión</button>
+
+    <p class="registro-texto">¿No tienes cuenta?</p>
+    <a href="./registrarse.html" class="registro-link" routerLink="/registro">Registrarse</a>
+  </form>
+</div>
 <app-footer></app-footer>

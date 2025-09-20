@@ -9,32 +9,27 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-registro',
   imports: [Header, Footer, RouterLink, FormsModule],
   templateUrl: './registro.html',
-  styleUrl: './registro.css'
+  styleUrl: './registro.css',
 })
 export class Registro {
-
-  nuevoUsuario: Usuario = { 
+  nuevoUsuario: Usuario = {
     nombre: '',
     apellido: '',
     correo: '',
     contrasena: '',
   };
 
-    constructor(
-    private usuarioService: UsuarioService,
-    private router: Router
-  ) {}
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
 
-registrarUsuario() {
-  this.usuarioService.crearUsuario(this.nuevoUsuario).subscribe({
-    next: () => { 
-      this.router.navigate(['/ingresar']);
-    },
-    error: (err) => {
-      console.error('Error al registrar usuario', err);
-      alert('No se pudo registrar el usuario');
-    }
-  });
-} 
-
+  registrarUsuario() {
+    this.usuarioService.crearUsuario(this.nuevoUsuario).subscribe({
+      next: () => {
+        this.router.navigate(['/ingresar']);
+      },
+      error: (err) => {
+        console.error('Error al registrar usuario', err);
+        alert('No se pudo registrar el usuario');
+      },
+    });
+  }
 }

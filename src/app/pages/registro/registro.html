@@ -1,60 +1,55 @@
 <app-header></app-header>
 
-<section class="principal">
-  <article class="contenido">
-    <section class="logo">
-      <header class="header"><h1>Registrate</h1></header>
-      <img src="images/logo-con-nombre-fondo-anaranjado.jpg" alt="logo" />
-    </section>
-    <section class="name">
-      <label for="name" class="label">Nombre</label> <br />
-      <input
-        id="name"
-        [(ngModel)]="nuevoUsuario.nombre"
-        type="text"
-        placeholder="Ej: Andres"
-        class="input"
-      />
-    </section>
-    <br>
-    <section class="lastname">
-      <label for="lastname" class="label">Apellido</label> <br />
-      <input
-        id="lastname"
-        [(ngModel)]="nuevoUsuario.apellido"
-        type="text"
-        placeholder="Ej: García"
-        class="input"
-      />
-    </section>
-    <br>
+<section class="registro-contenedor">
+  <form class="registro-form">
+    <h1 class="registro-titulo">Registrate</h1>
+    <img
+      src="images/logo-con-nombre-fondo-anaranjado.png"
+      alt="Logo AidLink"
+      class="registro-logo"
+    />
 
-    <section class="mail">
-      <label for="mail" class="label">Correo</label> <br />
-      <input
-        id="mail"
-        [(ngModel)]="nuevoUsuario.correo"
-        type="email"
-        placeholder="Ej: correo@email.com"
-        class="input"
-      />
-    </section>
+    <label for="name" class="registro-label">Nombre</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoUsuario.nombre"
+      id="name"
+      class="registro-input"
+    />
 
-    <section class="password">
-      <label for="contraseña" class="label">Contraseña</label> <br />
-      <input id="contraseña" [(ngModel)]="nuevoUsuario.contrasena" type="password" class="input" />
-    </section>
+    <label for="lastname" class="registro-label">Apellido</label>
+    <input
+      type="text"
+      [(ngModel)]="nuevoUsuario.apellido"
+      id="lastname"
+      class="registro-input"
+    />
 
-    <section class="password-confirm">
-      <label for="contraseña2" class="label">Confirmar Contraseña</label> <br />
-      <input id="contraseña2" type="password" class="input" />
-    </section>
-    <section class="info">
-      <button (click)="registrarUsuario()" class="btn">Registrarse</button><br />
-      <label for="pregunta" class="question">¿Ya tienes cuenta?</label><br />
-      <a class="a" routerLink="/ingresar">Iniciar Sesión</a>
-    </section>
-  </article>
+    <label for="Usuario" class="registro-label">Usuario</label>
+    <input
+      type="text"
+      id="Usuario"
+      [(ngModel)]="nuevoUsuario.correo"
+      placeholder="Ej: Andres321"
+      class="registro-input"
+    />
+
+    <label for="Contrasena" class="registro-label">Contraseña</label>
+    <input
+      type="password"
+      [(ngModel)]="nuevoUsuario.contrasena"
+      id="Contrasena"
+      class="registro-input"
+    />
+
+    <label for="ConfirmarContrasena" class="registro-label">Confirmar Contraseña</label>
+    <input type="password" id="ConfirmarContrasena" class="registro-input" />
+
+    <button type="submit" (click)="registrarUsuario()" class="registro-btn">Registrarse</button>
+
+    <p class="registro-texto">¿Ya tienes cuenta?</p>
+    <a href="./inicioSecion.html" class="registro-link" routerLink="/ingresar">Iniciar Sesión</a>
+  </form>
 </section>
 
 <app-footer></app-footer>
