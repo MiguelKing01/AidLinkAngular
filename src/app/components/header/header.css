@@ -32,6 +32,9 @@
   padding: 10px 25px;
   border-radius: 10px;
   background-color: #f28c38;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
   margin-top: 18px;
 }
 
@@ -40,9 +43,7 @@
 }
 
 .ingresar{
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
+  margin-top: 26px;
 }
 
 .cajas {

@@ -19,6 +19,6 @@ export const routes: Routes = [
     { path: 'donar', component:HacerDonacion },
     { path: 'postulacion', component:Postulacion },
     { path: 'enviar-donacion', component:EnviarDonacion },
-    { path: 'peticion', component:EnviarPeticion },
+    { path: 'inicio/hacer-peticion', component:EnviarPeticion },
     { path: 'nosotros', component: Nosotros}
 ];

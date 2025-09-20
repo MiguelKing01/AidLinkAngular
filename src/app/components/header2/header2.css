@@ -3,34 +3,36 @@
 }
 
 .contenedor-header {
-  width: 92%;
+  width: 93%;
   display: flex;
   flex-direction: row;
   border-bottom: 3px solid #f28c38;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 60px;
+  align-items: flex-end;
+  padding: 5px 60px;
 }
 
 .container-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-right: 30px;
+  margin-right: 0px;
 }
 
 .container-menu ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 30px;
+  gap: 0px;
 }
 
 .cajas {
-  padding: 15px 22px;
-  margin-top: 10px;
+  padding: 10px 10px 0;
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .container-menu .cajas {
@@ -61,7 +63,7 @@
   display: block;
   color: #333;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .menu li:hover {
@@ -72,9 +74,10 @@
     color: black;
     background-color: white;
     border: none;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 .text {
@@ -83,15 +86,18 @@
 
 .container-logo {
   flex: 1;
+  padding: 10px 0;
+  display: flex;
+  align-items: flex-end;
 }
 
 .logo-text {
-  height: 60px;
-  width: 18%;
+  height: 30px;
+  width: 10%;
 }
 .logo-icon {
-  height: 70px;
-  width: 10%;
+  height: 40px;
+  width: 5%;
 }
 
 a {
@@ -100,8 +106,9 @@ a {
 
 i {
   padding-top: 10px;
-  font-weight: 600;
-  font-size: 50px;
+  font-weight: 500;
+  font-size: 30px;
+  color: #f28c38;
 }
 
 .icono {

@@ -1,30 +1,32 @@
 <app-header2></app-header2>
 <section class="contenido">
-  <header class="titulo"><h1>¿Qué Necesitas Hacer Hoy?</h1></header>
+  <h2 class="acciones-titulo">¿Qué necesitas hacer hoy?</h2>
 
-  <section class="solicitudes">
-    <article class="cajas">
-      <section class="caja">
-        <figure class="figura"><i class="bi bi-arrow-through-heart-fill"></i></figure>
-        <h3 class="texto">Hacer Petición</h3>
-        <button class="btn"><a routerLink="/peticion">Entrar</a></button>
-      </section>
-      <section class="caja">
-        <figure></figure>
-        <h3 class="texto">Postularse a Trabajo</h3>
-        <button class="btn"><a routerLink="/postulacion">Entrar</a></button>
-      </section>
-      <section class="caja">
-        <figure></figure>
-        <h3 class="texto">Subir Vacante de Empleo</h3>
-        <button class="btn"><a routerLink="/vacante">Entrar</a></button>
-      </section>
-      <section class="caja">
-        <figure></figure>
-        <h3 class="texto">Hacer Donación</h3>
-        <button class="btn"><a routerLink="/donar">Entrar</a></button>
-      </section>
-    </article>
-  </section>
+  <main class="acciones-contenedor">
+    <section class="accion-card">
+      <img src="../images/healthcare.png" alt="Icono de pedir algo" class="accion-icono" />
+      <h3 class="accion-titulo">Hacer Petición</h3>
+      <a routerLink="/inicio/hacer-peticion" class="accion-boton">Entrar</a>
+    </section>
+
+    <section class="accion-card">
+      <img src="../images/food-donation.png" alt="Icono de donacion" class="accion-icono" />
+      <h3 class="accion-titulo">Hacer Donación</h3>
+      <a class="accion-boton" routerLink="/donar">Entrar</a>
+    </section>
+
+    <section class="accion-card">
+      <img src="../images/engineer.png" alt="Icono de trabajador" class="accion-icono" />
+      <h3 class="accion-titulo">Postularse a Trabajo</h3>
+      <a class="accion-boton">Entrar</a>
+    </section>
+
+    <section class="accion-card">
+      <img src="../images/vacant.png" alt="Icono de vacante" class="accion-icono" />
+      <h3 class="accion-titulo">Subir vacante de empleo</h3>
+      <a class="accion-boton">Entrar</a>
+    </section>
+  </main>
 </section>
 <app-footer></app-footer>
+

@@ -7,7 +7,7 @@
 }
 
 .informacion {
-  min-width: 800px;
+  min-width: 950px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -15,7 +15,8 @@
 }
 
 .titulo {
-  font-size: 59px;
+  width: 100%;
+  font-size: 60px;
   font-weight: bold;
   text-align: center;
   line-height: 1.4;
@@ -23,12 +24,13 @@
 
 .descripcion {
   text-align: center;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 400;
   line-height: 1.3;
   color: #1b1b1b;
-  margin-bottom: 30px;
-  
+  margin-bottom: 30px; 
+  width: 80%; 
+  letter-spacing: 1px;
 }
 
 .btn {
@@ -41,14 +43,13 @@
   background-color: rgba(33, 151, 49, 0.658);
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 20px;
   text-decoration: none;
 }
 
 .btn:hover {
   transform: translateY(-2px);
   background-color: rgb(0, 155, 21);
-  box-shadow: 0 5px 10px rgb(0, 155, 21);
+  box-shadow: 2px 5px 10px rgb(0, 155, 21);
 }
 
 .btn:active {
@@ -78,20 +79,20 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centra la imagen en su columna */
+  justify-content: center;
   align-items: center;
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .imagen-con-circulo::before {
   content: "";
   position: absolute;
-  width: 280px;
-  height: 280px;
+  width: 300px;
+  height: 300px;
   background: #e67e22;
   border-radius: 50%;
   top: 39%;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -99,5 +100,5 @@
 .imagen-con-circulo img {
   position: relative;
   z-index: 2;
-  width: 550px;
+  width: 600px;
 }
