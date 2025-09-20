@@ -15,36 +15,38 @@
       <header class="header"><h1>Solicitar Ayuda</h1></header>
       <section class="cajas">
         <section class="caja">
-          <label for="nombre" class="text">Nombre Completo</label> <br />
-          <input type="text" class="input" />
-        </section>
-        <section class="caja">
-          <label for="ayuda" class="text">Ayuda</label> <br />
-          <input type="text" class="input" />
+          <label for="nombre" class="text">Nombre peticion</label> <br />
+          <input id="nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" type="text" class="input" />
         </section>
         <section class="caja">
           <label for="descripcion" class="text">descripción</label> <br />
-          <input type="text" class="input" />
+          <input [(ngModel)]="NuevaPeticion.desc_peticion" type="text" class="input" />
         </section>
         <section class="caja">
           <label for="Tipo" class="text">Tipo</label> <br />
-          <select name="Tipo" id="Tipo">
+          <select
+            [(ngModel)]="NuevaPeticion.categoriaId"
+            name="Tipo"
+            id="Tipo"
+            class="input"
+            (change)="CategoriaPeticion()"
+          >
             <option value="1">Objeto</option>
             <option value="2">Dinero</option>
           </select>
         </section>
-        <section class="caja">
-          <label for="sireccion" class="text">Dirección</label> <br />
-          <input type="text" class="input" />
+        <section class="caja" *ngIf="mostrarDireccion">
+          <label for="direccion" class="text">Dirección</label> <br />
+          <input [(ngModel)]="NuevaPeticion.direccion" type="text" class="input" />
         </section>
         <section class="caja">
-          <label for="telefono" class="text">Telefono</label> <br />
-          <input type="text" class="input" />
+          <label for="cantidad" class="text">Cantidad</label> <br />
+          <input [(ngModel)]="NuevaPeticion.cantidad_peticion" type="number" class="input" />
         </section>
         <section class="botones">
           <figure class="btn1"><button class="cancelar">Cancelar</button> <br /></figure>
           <figure class="btn2">
-            <button class="enviar">Enviar</button>
+            <button (click)="crearPeticion()" class="enviar">Enviar</button>
           </figure>
         </section>
       </section>

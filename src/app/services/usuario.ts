@@ -16,12 +16,12 @@ export interface Usuario {
 export class UsuarioService {
   private apiUrl = 'http://localhost:8080/Usuario';
 
-  private usuarioIdActual: number | null = null;
+  private usuarioIdActual: number = 0;
 
   constructor(private http: HttpClient) {}
 
   getUsuario(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/todos`);
+    return this.http.get<Usuario[]>(`${this.apiUrl}/todos`, { withCredentials: true });
   }
 
   crearUsuario(usuario: Usuario): Observable<Usuario[]> {
@@ -43,7 +43,7 @@ export class UsuarioService {
     this.usuarioIdActual = id;
   }
 
-  getUsuarioIdActual(): number | null {
+  getUsuarioIdActual(): number{
     return this.usuarioIdActual;
   }
   
