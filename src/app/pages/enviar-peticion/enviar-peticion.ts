@@ -39,8 +39,10 @@ export class EnviarPeticion {
 CategoriaPeticion() {
   if (this.NuevaPeticion.categoriaId == 1) {
     this.mostrarDireccion = true;
+    this.NuevaPeticion.nequi = null;
   } else {
     this.mostrarDireccion = false;
+    this.NuevaPeticion.direccion = null;
   }
 }
 
