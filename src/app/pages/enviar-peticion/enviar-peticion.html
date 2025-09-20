@@ -39,6 +39,10 @@
           <label for="direccion" class="text">Dirección</label> <br />
           <input [(ngModel)]="NuevaPeticion.direccion" type="text" class="input" />
         </section>
+        <section class="caja" *ngIf="mostrarDireccion == false">
+          <label class="text" for="nequi">Numero de nequi</label><br>
+          <input class="input" type="number" [(ngModel)]="NuevaPeticion.nequi" name="nequi">
+        </section>
         <section class="caja">
           <label for="cantidad" class="text">Cantidad</label> <br />
           <input [(ngModel)]="NuevaPeticion.cantidad_peticion" type="number" class="input" />

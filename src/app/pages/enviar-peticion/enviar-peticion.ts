@@ -25,6 +25,7 @@ export class EnviarPeticion {
     fecha_peticion: new Date().toISOString().split('T')[0] as any,
     estado_peticion: 1,
     direccion: '',
+    nequi: 0,
     usuario: { id: 0},
     categoriaId: 0,
   };
@@ -35,9 +36,14 @@ export class EnviarPeticion {
     this.UsuarioActual = this.usuarioService.getUsuarioIdActual();
   }
 
-  CategoriaPeticion() {
-    this.mostrarDireccion = this.NuevaPeticion.categoriaId == 1;
+CategoriaPeticion() {
+  if (this.NuevaPeticion.categoriaId == 1) {
+    this.mostrarDireccion = true;
+  } else {
+    this.mostrarDireccion = false;
   }
+}
+
 
   crearPeticion() {
     this.ObtenerUsuario(); 

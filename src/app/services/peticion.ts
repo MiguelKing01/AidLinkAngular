@@ -10,6 +10,7 @@ export interface Peticion {
   fecha_peticion: String; 
   estado_peticion: number;
   direccion: string | null;
+  nequi: number | null;
   usuario: {id: number};
   categoriaId: number; 
   // usuario: {
