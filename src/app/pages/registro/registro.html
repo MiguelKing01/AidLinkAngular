@@ -9,27 +9,30 @@
       class="registro-logo"
     />
 
-    <label for="name" class="registro-label">Nombre</label>
+    <label for="nombre" class="registro-label">Nombre</label>
     <input
       type="text"
       [(ngModel)]="nuevoUsuario.nombre"
-      id="name"
+      name="nombre"
+      id="nombre"
       class="registro-input"
     />
 
-    <label for="lastname" class="registro-label">Apellido</label>
+    <label for="apellido" class="registro-label">Apellido</label>
     <input
       type="text"
       [(ngModel)]="nuevoUsuario.apellido"
-      id="lastname"
+      name="apellido"
+      id="apellido"
       class="registro-input"
     />
 
-    <label for="Usuario" class="registro-label">Usuario</label>
+    <label for="correo" class="registro-label">correo</label>
     <input
       type="text"
-      id="Usuario"
+      id="correo"
       [(ngModel)]="nuevoUsuario.correo"
+      name="correo"
       placeholder="Ej: Andres321"
       class="registro-input"
     />
@@ -39,6 +42,7 @@
       type="password"
       [(ngModel)]="nuevoUsuario.contrasena"
       id="Contrasena"
+      name="contrasena"
       class="registro-input"
     />
 

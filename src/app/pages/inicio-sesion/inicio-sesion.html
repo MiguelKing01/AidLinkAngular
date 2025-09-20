@@ -8,17 +8,19 @@
       class="registro-logo"
     />
 
-    <label for="Usuario" class="registro-label">Usuario</label>
+    <label for="Usuario" class="registro-label">Correo</label>
     <input
       type="text"
       [(ngModel)]="correo"
       id="Usuario"
-      placeholder="Ej: Andres321"
+      name="correo"
+      placeholder="miguel@correo.com"
       class="registro-input"
     />
 
     <label for="Contraseña" class="registro-label">Contraseña</label>
-    <input type="password" [(ngModel)]="contrasena" id="Contraseña" class="registro-input" />
+    <input type="password" [(ngModel)]="contrasena" name="contrasena" id="Contraseña" class="registro-input" />
+    <div id="error" class="error"></div>
 
     <button class="registro-btn" (click)="IniciarSesion()">Iniciar Sesión</button>
 
@@ -27,3 +29,5 @@
   </form>
 </div>
 <app-footer></app-footer>
+
+
