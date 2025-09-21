@@ -12,12 +12,12 @@
                 (click)="toggleMenu($event)"
                 aria-haspopup="true"
                 [attr.aria-expanded]="menuOpen">
-          Menu
+          MENU
         </button>
       
         <ul class="menu" *ngIf="menuOpen" role="menu" (click)="$event.stopPropagation()">
-          <li role="menuitem"><a routerLink="/peticion">Hacer petición</a></li>
-          <li role="menuitem"><a routerLink="/donar">Hacer donación</a></li>
+          <li role="menuitem"><a routerLink="/inicio/hacer-peticion">Hacer petición</a></li>
+          <li role="menuitem"><a routerLink="/inicio/hacer-donacion">Hacer donación</a></li>
         </ul>
       </li>
       

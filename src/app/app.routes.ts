@@ -14,11 +14,11 @@ import { Nosotros } from './pages/nosotros/nosotros';
 export const routes: Routes = [
     { path: '', component:Contenido },
     { path: 'inicio', component:Inicio },
-    { path: 'ingresar', component:InicioSesion },
-    { path: 'registro', component:Registro},
-    { path: 'donar', component:HacerDonacion },
+    { path: 'inicio/ingresar', component:InicioSesion },
+    { path: 'inicio/registro', component:Registro},
+    { path: 'inicio/hacer-donacion', component:HacerDonacion },
     { path: 'postulacion', component:Postulacion },
-    { path: 'enviar-donacion', component:EnviarDonacion },
+    { path: 'inicio/hacer-donacion/enviar-donacion', component:EnviarDonacion },
     { path: 'inicio/hacer-peticion', component:EnviarPeticion },
     { path: 'nosotros', component: Nosotros}
 ];

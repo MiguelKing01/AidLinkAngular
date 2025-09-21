@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-enviar-peticion',
-  imports: [Header2, Footer, RouterLink, FormsModule, CommonModule],
+  imports: [Header2, Footer, FormsModule, CommonModule, RouterLink],
   templateUrl: './enviar-peticion.html',
   styleUrl: './enviar-peticion.css',
 })
@@ -26,7 +26,7 @@ export class EnviarPeticion {
     estado_peticion: 1,
     direccion: '',
     nequi: 0,
-    usuario: { id: 0},
+    usuario: { id: 0 },
     categoriaId: 0,
   };
 
@@ -36,19 +36,18 @@ export class EnviarPeticion {
     this.UsuarioActual = this.usuarioService.getUsuarioIdActual();
   }
 
-CategoriaPeticion() {
-  if (this.NuevaPeticion.categoriaId == 1) {
-    this.mostrarDireccion = true;
-    this.NuevaPeticion.nequi = null;
-  } else {
-    this.mostrarDireccion = false;
-    this.NuevaPeticion.direccion = null;
+  CategoriaPeticion() {
+    if (this.NuevaPeticion.categoriaId == 1) {
+      this.mostrarDireccion = true;
+      this.NuevaPeticion.nequi = null;
+    } else if (this.NuevaPeticion.categoriaId == 0){
+      this.mostrarDireccion = false;
+      this.NuevaPeticion.direccion = null;
+    }
   }
-}
-
 
   crearPeticion() {
-    this.ObtenerUsuario(); 
+    this.ObtenerUsuario();
     this.NuevaPeticion.usuario.id = this.UsuarioActual;
     this.peticionService.crearPeticion(this.NuevaPeticion).subscribe({
       next() {

@@ -1,16 +1,53 @@
 <app-header2></app-header2>
-<section class="principal">
-  <section class="volver">
-    <section class="icon">
-      <a routerLink="/inicio"><i class="bi bi-arrow-left-circle-fill"></i></a>
-      <h3 class="back">Regresar</h3>
+  <section class="solicitud-head">
+    <section class="solicitud-back" onclick="history.back()">
+      <img
+        src="../images/back.png"
+        alt="Icono regresar"
+        class="solicitud-icon"
+      />
+      <span class="solicitud-back-text">Regresar</span>
     </section>
-    <section class="texto">
-      <p><a routerLink="/inicio">Inicio</a>/<a routerLink="donacion">Hacer petición</a></p>
-    </section>
+    <nav class="solicitud-breadcrumb">
+      <a routerLink="/inicio">Inicio</a> >  <a routerLink="/inicio/hacer-peticion">Hacer Petición</a>
+    </nav>
   </section>
 
-  <section class="content">
+  <section class="solicitud-container">
+    <form class="solicitud-form">
+      <h3 class="solicitud-titulo">Solicitar Ayuda</h3>
+
+      <label for="Nombre" class="solicitud-label">Nombre Petición</label>
+      <input type="text"  id="Nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" class="solicitud-input" />
+
+      <label for="Descripcion" class="solicitud-label">Descripción</label>
+      <input type="text" id="Descripcion" [(ngModel)]="NuevaPeticion.desc_peticion" class="solicitud-input" />
+
+      <label for="Tdonacion" class="solicitud-label">Tipo de donación</label>
+      <select id="Tdonacion" [(ngModel)]="NuevaPeticion.categoriaId" name="Tipo" (change)="CategoriaPeticion()" class="solicitud-input-t">
+        <option value="">Seleccione...</option>
+        <option value="1">Objeto</option>
+        <option value="2">Dinero</option>
+      </select>
+
+      <section *ngIf= "mostrarDireccion">
+        <label for="Direccion" class="solicitud-label">Dirección</label>
+        <input type="text" id="Direccion" [(ngModel)]="NuevaPeticion.direccion" class="solicitud-input" />
+      </section>
+
+      <section *ngIf="mostrarDireccion == false">
+        <label for="nequi" class="solicitud-label">Número de Nequi</label>
+        <input type="number" id="nequi" [(ngModel)]="NuevaPeticion.nequi" class="solicitud-input" />
+      </section>
+
+      <section class="solicitud-botones">
+        <button type="button" class="btn-cancelar">Cancelar</button>
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </section>
+    </form>
+  </section>
+
+  <!-- <section class="content">
     <article class="contenido">
       <header class="header"><h1>Solicitar Ayuda</h1></header>
       <section class="cajas">
@@ -55,6 +92,6 @@
         </section>
       </section>
     </article>
-  </section>
-</section>
+  </section> -->
+<!-- </section> -->
 <app-footer></app-footer>
