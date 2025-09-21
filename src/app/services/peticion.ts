@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Peticion {
-  id?: number;
+  id_peticion?: number;
   nombre_peticion: string;
   desc_peticion: string;
   cantidad_peticion: number;
@@ -31,8 +31,8 @@ export class PeticionService {
 
   constructor(private http: HttpClient) {}
 
-  getPeticion(): Observable<Peticion> {
-    return this.http.get<Peticion>(`${this.apiURL}/todos`);
+  getPeticion(): Observable<Peticion[]> {
+    return this.http.get<Peticion[]>(`${this.apiURL}/todos`);
   }
 
   crearPeticion(peticion: Peticion): Observable<Peticion[]> {
