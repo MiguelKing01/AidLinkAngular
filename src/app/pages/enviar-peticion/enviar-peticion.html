@@ -18,10 +18,10 @@
       <h3 class="solicitud-titulo">Solicitar Ayuda</h3>
 
       <label for="Nombre" class="solicitud-label">Nombre Petición</label>
-      <input type="text"  id="Nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" class="solicitud-input" />
+      <input type="text"  id="Nombre" name="nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" class="solicitud-input" />
 
       <label for="Descripcion" class="solicitud-label">Descripción</label>
-      <input type="text" id="Descripcion" [(ngModel)]="NuevaPeticion.desc_peticion" class="solicitud-input" />
+      <input type="text" id="Descripcion" name="descripcion" [(ngModel)]="NuevaPeticion.desc_peticion" class="solicitud-input" />
 
       <label for="Tdonacion" class="solicitud-label">Tipo de donación</label>
       <select id="Tdonacion" [(ngModel)]="NuevaPeticion.categoriaId" name="Tipo" (change)="CategoriaPeticion()" class="solicitud-input-t">
@@ -32,17 +32,20 @@
 
       <section *ngIf= "mostrarDireccion">
         <label for="Direccion" class="solicitud-label">Dirección</label>
-        <input type="text" id="Direccion" [(ngModel)]="NuevaPeticion.direccion" class="solicitud-input" />
+        <input type="text" name="direccion" id="Direccion" [(ngModel)]="NuevaPeticion.direccion" class="solicitud-input" />
       </section>
 
       <section *ngIf="mostrarDireccion == false">
         <label for="nequi" class="solicitud-label">Número de Nequi</label>
-        <input type="number" id="nequi" [(ngModel)]="NuevaPeticion.nequi" class="solicitud-input" />
+        <input type="number" name="nequi" id="nequi" [(ngModel)]="NuevaPeticion.nequi" class="solicitud-input" />
       </section>
+
+      <label for="cantidad" class="solicitud-label">NCantidad</label>
+      <input type="number" name="cantidad" id="cantidad" [(ngModel)]="NuevaPeticion.cantidad_peticion" class="solicitud-input" />
 
       <section class="solicitud-botones">
         <button type="button" class="btn-cancelar">Cancelar</button>
-        <button type="submit" class="btn-enviar">Enviar</button>
+        <button type="submit" (click)="crearPeticion()" class="btn-enviar">Enviar</button>
       </section>
     </form>
   </section>
