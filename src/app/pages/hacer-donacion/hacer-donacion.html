@@ -21,7 +21,7 @@
         </h3>
       </section>
       <figure>
-        <button class="btn"><a routerLink="/enviar-donacion">Donar</a></button>
+        <button class="btn"><a [routerLink]="['/enviar-donacion', p.id_peticion, p.categoriaId]">Donar</a></button>
       </figure>
     </section>
   </article>

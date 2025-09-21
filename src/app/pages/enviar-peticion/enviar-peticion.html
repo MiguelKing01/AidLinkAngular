@@ -9,7 +9,7 @@
       <span class="solicitud-back-text">Regresar</span>
     </section>
     <nav class="solicitud-breadcrumb">
-      <a routerLink="/inicio">Inicio</a> >  <a routerLink="/inicio/hacer-peticion">Hacer Petición</a>
+      <a routerLink="/">Hacer Petición</a>
     </nav>
   </section>
 
@@ -17,8 +17,8 @@
     <form class="solicitud-form">
       <h3 class="solicitud-titulo">Solicitar Ayuda</h3>
 
-      <label for="Nombre" class="solicitud-label">Nombre Petición</label>
-      <input type="text"  id="Nombre" name="nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" class="solicitud-input" />
+      <label for="nombre" class="solicitud-label">Nombre Petición</label>
+      <input type="text"  id="nombre" name="nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" class="solicitud-input" />
 
       <label for="Descripcion" class="solicitud-label">Descripción</label>
       <input type="text" id="Descripcion" name="descripcion" [(ngModel)]="NuevaPeticion.desc_peticion" class="solicitud-input" />
@@ -35,7 +35,7 @@
         <input type="text" name="direccion" id="Direccion" [(ngModel)]="NuevaPeticion.direccion" class="solicitud-input" />
       </section>
 
-      <section *ngIf="mostrarDireccion == false">
+      <section *ngIf="!mostrarDireccion">
         <label for="nequi" class="solicitud-label">Número de Nequi</label>
         <input type="number" name="nequi" id="nequi" [(ngModel)]="NuevaPeticion.nequi" class="solicitud-input" />
       </section>

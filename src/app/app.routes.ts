@@ -18,7 +18,7 @@ export const routes: Routes = [
     { path: 'inicio/registro', component:Registro},
     { path: 'inicio/hacer-donacion', component:HacerDonacion },
     { path: 'postulacion', component:Postulacion },
-    { path: 'enviar-donacion', component:EnviarDonacion },
+    { path: 'enviar-donacion/:id/:categoriaId', component:EnviarDonacion },
     { path: 'inicio/hacer-peticion', component:EnviarPeticion },
     { path: 'nosotros', component: Nosotros}
 ];
