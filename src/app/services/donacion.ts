@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Donacion {
-  id?: number;
+  id_Donacion?: number;
   desc_Donacion: string;
-  cantidad_Donacion: Number;
-  fecha_Donacion: String;
+  cantidad_Donacion: number;
+  fecha_Donacion: string;
   estado_Donacion: number;
-  direccion: String | null;
-  usuario: { id: number };
-  peticion: { id: number };
+  usuarioId: { id: number };
+  peticionId: { id_peticion: number };
   categoriaId: number;
+  direccion: string | null;
 }
 
 @Injectable({
@@ -26,10 +26,10 @@ export class DonacionService {
     return this.http.get<Donacion>(`${this.UrlAPI}/todos`);
   }
 
-  crearDonacion(donacion: Donacion): Observable<Donacion[]> {
+  crearDonacion(donacion: Donacion): Observable<Donacion> {
     const headers = new HttpHeaders({
       Authorization: 'Basic ' + btoa('client:123456'),
     });
-    return this.http.post<Donacion[]>(`${this.UrlAPI}/crear-Donacion`, donacion, {headers});
+    return this.http.post<Donacion>(`${this.UrlAPI}/crear-Donacion`, donacion, {headers});
   }
 }
