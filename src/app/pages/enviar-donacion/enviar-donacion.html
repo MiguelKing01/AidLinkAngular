@@ -5,39 +5,72 @@
       <a routerLink="/donar"><i class="bi bi-arrow-left-circle-fill"></i></a>
       <h3 class="back">Regresar</h3>
     </section>
-    <section class="texto"><p><a routerLink="/inicio">Inicio</a>/<a routerLink="/donar">Hacer donación</a>/<a routerLink="donacion">Enviar donación</a></p></section>
+    <section class="texto">
+      <p>
+        <a routerLink="/inicio">Inicio</a> / <a routerLink="/donar">Hacer donación</a> /
+        <a routerLink="donacion">Enviar donación</a>
+      </p>
+    </section>
   </section>
-
+  <section class="Detalles" *ngIf="Peticion">
+    <h3>{{ Peticion.nombre_peticion }}</h3>
+    <p><span class="tt">Fecha: </span>{{ Peticion.fecha_peticion }}</p>
+    <p><span class="tt">Descripcion: </span>{{ Peticion.desc_peticion }}</p>
+    <p><span class="tt">Cantidad: </span>{{ Peticion.cantidad_peticion }}</p>
+  </section>
   <section class="content">
     <article class="contenido">
-      <header class="header"><h1>Enviar Donación</h1></header>
+      <header class="header">
+        <h1>Enviar Donación</h1>
+      </header>
       <section class="cajas">
         <section class="caja">
-          <label for="nombre" class="text">Nombre Completo</label> <br />
-          <input type="text" class="input" />
+          <label for="descripcion" class="text">Descripcion</label> <br />
+          <input
+            id="descripcion"
+            name="descripcion"
+            [(ngModel)]="NuevaDonacion.desc_Donacion"
+            type="text"
+            class="input"
+          />
         </section>
         <section class="caja">
-          <label for="ayuda" class="text">Tipo de donación</label> <br />
-          <input type="text" class="input" />
+          <label for="Tipo" class="text">Tipo</label> <br />
+          <select
+            [(ngModel)]="NuevaDonacion.categoriaId"
+            name="Tipo"
+            id="Tipo"
+            class="input"
+            (change)="CategoriaDonacion()"
+          >
+            <option value="1">Objeto</option>
+            <option value="2">Dinero</option>
+          </select>
+        </section>
+        <section class="caja" *ngIf="mostrarDireccion">
+          <label for="direccion" class="text">Dirección</label> <br />
+          <input
+            id="direccion"
+            name="direccion"
+            [(ngModel)]="NuevaDonacion.direccion"
+            type="text"
+            class="input"
+          />
         </section>
         <section class="caja">
-          <label for="descripcion" class="text">descripción</label> <br />
-          <input type="text" class="input" />
-        </section>
-        <section class="caja">
-          <label for="sireccion" class="text">Dirección</label> <br />
-          <input type="text" class="input" />
-        </section>
-        <section class="caja">
-          <label for="telefono" class="text">Telefono</label> <br />
-          <input type="text" class="input" />
+          <label for="cantidad" class="text">Cantidad</label> <br />
+          <input
+            id="cantidad"
+            name="cantidad"
+            [(ngModel)]="NuevaDonacion.cantidad_Donacion"
+            type="text"
+            class="input"
+          />
         </section>
         <section class="botones">
-          <figure class="btn1">
-            <button class="cancelar">Cancelar</button> <br />
-          </figure>
+          <figure class="btn1"><button class="cancelar">Cancelar</button> <br /></figure>
           <figure class="btn2">
-            <button class="enviar">Enviar</button>
+            <button class="enviar" (click)="crearDonacion()">Enviar</button>
           </figure>
         </section>
       </section>

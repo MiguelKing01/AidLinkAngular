@@ -43,16 +43,19 @@
   width: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 50px;
   border: 1px solid thistle;
-  padding: 10px 0;
-  box-shadow: 0 0 10px slategray;
+  padding: 20px;
+  box-shadow: 0 0 3px 1px grey;
+  margin-bottom: 25px;
 }
 
 .donacion {
   font-size: 25px;
+  margin-left: 100px;
+  color: grey;
 }
 
 .btn {
