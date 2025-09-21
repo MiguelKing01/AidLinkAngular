@@ -1,33 +1,48 @@
 <app-header></app-header>
 <div class="registro-contenedor">
-  <form class="registro-form">
+  <form [formGroup]="inicioSesion" (ngSubmit)="IniciarSesion()" class="registro-form">
     <h1 class="registro-titulo">Iniciar Sesión</h1>
     <img
       src="../images/logo-con-nombre-fondo-anaranjado.png"
       alt="Logo AidLink"
       class="registro-logo"
     />
-
-    <label for="Usuario" class="registro-label">Correo</label>
+    <label for="correo" class="registro-label">Correo</label>
     <input
+      formControlName="correo"
       type="text"
-      [(ngModel)]="correo"
-      id="Usuario"
+      id="correo"
       name="correo"
       placeholder="miguel@correo.com"
       class="registro-input"
     />
-
+    <div class="error" *ngIf="correoControl?.invalid && (correoControl?.dirty || correoControl?.touched)">
+      <small *ngIf="correoControl?.errors?.['required']">El correo es obligatorio.</small>
+      <small *ngIf="correoControl?.errors?.['email']">Formato de correo inválido.</small>
+    </div>
     <label for="Contraseña" class="registro-label">Contraseña</label>
-    <input type="password" [(ngModel)]="contrasena" name="contrasena" id="Contraseña" class="registro-input" />
+    <input
+      formControlName="contrasena"
+      type="password"
+      id="Contraseña"
+      name="contrasena"
+      class="registro-input"
+    />
+    <div class="error" *ngIf="contrasenaControl?.invalid && (contrasenaControl?.dirty || contrasenaControl?.touched)">
+      <small *ngIf="contrasenaControl?.errors?.['required']">La contraseña es obligatoria.</small>
+      <small *ngIf="contrasenaControl?.errors?.['minlength']">
+        La contraseña debe tener al menos 6 caracteres.
+      </small>
+    </div>
+
     <div id="error" class="error"></div>
 
-    <button class="registro-btn" (click)="IniciarSesion()">Iniciar Sesión</button>
+    <button class="registro-btn" type="submit" [disabled]="inicioSesion.invalid">
+      Iniciar Sesión
+    </button>
 
     <p class="registro-texto">¿No tienes cuenta?</p>
-    <a class="registro-link" routerLink="/registro">Registrarse</a>
+    <a class="registro-link" routerLink="/inicio/registro">Registrarse</a>
   </form>
 </div>
 <app-footer></app-footer>
-
-
