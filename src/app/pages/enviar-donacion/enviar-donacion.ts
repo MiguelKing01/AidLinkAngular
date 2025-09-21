@@ -7,7 +7,7 @@ import { Donacion, DonacionService } from '../../services/donacion';
 import { UsuarioService } from '../../services/usuario';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { PeticionService } from '../../services/peticion';
+import { Peticion, PeticionService } from '../../services/peticion';
 
 @Component({
   selector: 'app-enviar-donacion',
@@ -20,16 +20,17 @@ export class EnviarDonacion {
   idCategoria!: number;
   UsuarioActual: number = 0;
   mostrarDireccion: boolean = false;
+  Peticion!: Peticion;
 
   NuevaDonacion: Donacion = {
-  desc_Donacion: '',
-  cantidad_Donacion: 0,
-  fecha_Donacion: new Date().toISOString().split('T')[0],
-  estado_Donacion: 0,
-  usuarioId: { id: 0 },
-  peticionId: { id_peticion: 0 },
-  categoriaId: 0,
-  direccion: ''
+    desc_Donacion: '',
+    cantidad_Donacion: 0,
+    fecha_Donacion: new Date().toISOString().split('T')[0],
+    estado_Donacion: 0,
+    usuarioId: { id: 0 },
+    peticionId: { id_peticion: 0 },
+    categoriaId: 0,
+    direccion: '',
   };
 
   constructor(
@@ -45,26 +46,38 @@ export class EnviarDonacion {
 
   CategoriaDonacion() {
     this.mostrarDireccion = this.NuevaDonacion.categoriaId == 1;
-}
+  }
 
   obtenerPeticionCategoria() {
     this.idPeticion = Number(this.route.snapshot.paramMap.get('id'));
     this.idCategoria = Number(this.route.snapshot.paramMap.get('categoriaId'));
   }
 
-  crearDonacion(){
+  ngOnInit() {
+  this.idPeticion = Number(this.route.snapshot.paramMap.get('id'));
+  this.idCategoria = Number(this.route.snapshot.paramMap.get('categoriaId'));
+
+  this.peticionService.getPeticionId(this.idPeticion).subscribe({
+    next: (data) => {
+      this.Peticion = data;
+    },
+    error: (err) => console.error(err),
+  });
+  }
+
+  crearDonacion() {
     this.ObtenerUsuario();
     this.NuevaDonacion.usuarioId.id = this.UsuarioActual;
     this.obtenerPeticionCategoria();
     this.NuevaDonacion.peticionId.id_peticion = this.idPeticion;
     this.NuevaDonacion.categoriaId = this.idCategoria;
     this.donacionService.crearDonacion(this.NuevaDonacion).subscribe({
-      next: ()=>{
-        alert("La donacion ha sido credada");
+      next: () => {
+        alert('La donacion ha sido credada');
       },
-      error: (err) =>{
-        alert("La donacion no se pudo crear");
-      }
-    })
+      error: (err) => {
+        alert('La donacion no se pudo crear');
+      },
+    });
   }
 }

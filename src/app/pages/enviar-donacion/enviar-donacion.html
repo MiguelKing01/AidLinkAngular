@@ -7,11 +7,16 @@
     </section>
     <section class="texto">
       <p>
-        <a routerLink="/inicio">Inicio</a> /
-        <a routerLink="/donar">Hacer donación</a> /
+        <a routerLink="/inicio">Inicio</a> / <a routerLink="/donar">Hacer donación</a> /
         <a routerLink="donacion">Enviar donación</a>
       </p>
     </section>
+  </section>
+  <section class="Detalles" *ngIf="Peticion">
+    <h3>{{ Peticion.nombre_peticion }}</h3>
+    <p><span class="tt">Fecha: </span>{{ Peticion.fecha_peticion }}</p>
+    <p><span class="tt">Descripcion: </span>{{ Peticion.desc_peticion }}</p>
+    <p><span class="tt">Cantidad: </span>{{ Peticion.cantidad_peticion }}</p>
   </section>
   <section class="content">
     <article class="contenido">
@@ -63,9 +68,7 @@
           />
         </section>
         <section class="botones">
-          <figure class="btn1">
-            <button class="cancelar">Cancelar</button> <br />
-          </figure>
+          <figure class="btn1"><button class="cancelar">Cancelar</button> <br /></figure>
           <figure class="btn2">
             <button class="enviar" (click)="crearDonacion()">Enviar</button>
           </figure>
