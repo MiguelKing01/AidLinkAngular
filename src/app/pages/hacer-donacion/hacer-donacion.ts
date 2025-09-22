@@ -6,11 +6,12 @@ import { DonacionService } from '../../services/donacion';
 import { Peticion, PeticionService } from '../../services/peticion';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Accesibility } from '../../components/accesibility/accesibility';
 
 @Component({
   selector: 'app-hacer-donacion',
   standalone: true,
-  imports: [Header2, Footer, RouterLink, FormsModule, CommonModule],
+  imports: [Header2, Footer, RouterLink, FormsModule, CommonModule, Accesibility],
   templateUrl: './hacer-donacion.html',
   styleUrl: './hacer-donacion.css',
 })

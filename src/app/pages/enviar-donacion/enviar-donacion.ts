@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Header2 } from '../../components/header2/header2';
@@ -8,10 +7,11 @@ import { UsuarioService } from '../../services/usuario';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Peticion, PeticionService } from '../../services/peticion';
+import { Accesibility } from '../../components/accesibility/accesibility';
 
 @Component({
   selector: 'app-enviar-donacion',
-  imports: [Header2, Footer, RouterLink, FormsModule, CommonModule],
+  imports: [Header2, Footer, RouterLink, FormsModule, CommonModule, Accesibility],
   templateUrl: './enviar-donacion.html',
   styleUrl: './enviar-donacion.css',
 })

@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet, Routes } from '@angular/router';
-import { HacerPeticion } from './pages/hacer-peticion/hacer-peticion';
 // Removed duplicate import of RouterOutlet
 
 @Component({

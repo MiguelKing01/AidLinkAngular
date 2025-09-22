@@ -7,6 +7,48 @@
   flex-direction: row;
 }
 
+.solicitud-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 40px;
+}
+
+.solicitud-back {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;     
+  cursor: pointer;
+  text-decoration: none;
+  gap: 4px;                
+}
+
+.solicitud-icon {
+  width: 40px;             
+  height: auto;
+  display: block;
+}
+
+.solicitud-back-text {
+  font-size: 1rem; 
+  font-weight: 600;
+  color: #e67e22;
+  margin: 0;
+}
+
+.solicitud-breadcrumb {
+  font-size: 0.875rem; 
+  color: #444;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.solicitud-breadcrumb a {
+  text-decoration: none;
+  color: #e86f2f;
+  font-weight: 500;
+}
+
 .icon{
     i{
         font-size: 40px;

@@ -1,13 +1,15 @@
 <app-header2></app-header2>
+<app-accesibility></app-accesibility>
 <section class="principal">
-  <section class="volver">
-    <section class="icon">
-      <a routerLink="/inicio"><i class="bi bi-arrow-left-circle-fill"></i></a>
-      <h3 class="back">Regresar</h3>
+  <section class="solicitud-head">
+    <section class="solicitud-back" onclick="history.back()">
+      <img src="../images/back.png" alt="Icono regresar" class="solicitud-icon" />
+      <span class="solicitud-back-text">Regresar</span>
     </section>
-    <section class="texto">
-      <p>Inicio/Hacer Donación</p>
-    </section>
+    <nav class="solicitud-breadcrumb">
+      <a routerLink="/inicio">inicio ></a>
+      <a routerLink="/inicio/hacer-donacion"> hacer donación</a>
+    </nav>
   </section>
 
   <article class="contenido">
@@ -17,11 +19,13 @@
     <section id="contenedorPeticion" class="caja" *ngFor="let p of Peticiones">
       <section>
         <h3 class="donacion">
-          {{p.nombre_peticion}}
+          {{ p.nombre_peticion }}
         </h3>
       </section>
       <figure>
-        <button class="btn"><a [routerLink]="['/enviar-donacion', p.id_peticion, p.categoriaId]">Donar</a></button>
+        <button class="btn">
+          <a [routerLink]="['/enviar-donacion', p.id_peticion, p.categoriaId]">Donar</a>
+        </button>
       </figure>
     </section>
   </article>

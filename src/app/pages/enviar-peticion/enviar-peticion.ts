@@ -7,10 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { Peticion, PeticionService } from '../../services/peticion';
 import { UsuarioService } from '../../services/usuario';
 import { CommonModule } from '@angular/common';
+import { Accesibility } from '../../components/accesibility/accesibility';
 
 @Component({
   selector: 'app-enviar-peticion',
-  imports: [Header2, Footer, RouterLink, FormsModule, CommonModule],
+  imports: [Header2, Footer, RouterLink, FormsModule, CommonModule, Accesibility],
   templateUrl: './enviar-peticion.html',
   styleUrl: './enviar-peticion.css',
 })

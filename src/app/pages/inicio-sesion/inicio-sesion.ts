@@ -5,10 +5,11 @@ import { Router, RouterLink } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Usuario, UsuarioService } from '../../services/usuario';
 import { CommonModule } from '@angular/common';
+import { Accesibility } from '../../components/accesibility/accesibility';
 
 @Component({
   selector: 'app-inicio-sesion',
-  imports: [Header, Footer, RouterLink, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [Header, Footer, RouterLink, FormsModule, ReactiveFormsModule, CommonModule, Accesibility],
   templateUrl: './inicio-sesion.html',
   styleUrl: './inicio-sesion.css',
 })

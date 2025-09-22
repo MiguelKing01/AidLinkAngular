@@ -5,10 +5,11 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Usuario, UsuarioService } from '../../services/usuario';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Accesibility } from '../../components/accesibility/accesibility';
 
 @Component({
   selector: 'app-registro',
-  imports: [Header, Footer, RouterLink, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [Header, Footer, RouterLink, FormsModule, ReactiveFormsModule, CommonModule, Accesibility],
   templateUrl: './registro.html',
   styleUrl: './registro.css',
 })

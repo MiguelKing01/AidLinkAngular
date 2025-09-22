@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<app-accesibility></app-accesibility>
 <section class="registro-contenedor">
   <form [formGroup]="registroForm" (ngSubmit)="registrarUsuario()" class="registro-form">
     <h1 class="registro-titulo">Registrate</h1>
@@ -10,36 +10,36 @@
     />
     <label for="nombre" class="registro-label">Nombre</label>
     <input formControlName="nombre" id="nombre" type="text" class="registro-input"/>
-    <div *ngIf="registroForm.get('nombre')?.touched && registroForm.get('nombre')?.invalid" class="error">
+    <section *ngIf="registroForm.get('nombre')?.touched && registroForm.get('nombre')?.invalid" class="error">
       El nombre es obligatorio (mínimo 2 caracteres).
-    </div>
+    </section>
     <label for="apellido" class="registro-label">Apellido</label>
     <input formControlName="apellido" id="apellido" type="text" class="registro-input"/>
-    <div *ngIf="registroForm.get('apellido')?.touched && registroForm.get('apellido')?.invalid" class="error">
+    <section *ngIf="registroForm.get('apellido')?.touched && registroForm.get('apellido')?.invalid" class="error">
       El apellido es obligatorio (mínimo 2 caracteres).
-    </div>
+    </section>
     <label for="correo" class="registro-label">Correo</label>
     <input formControlName="correo" id="correo" type="email" class="registro-input" placeholder="ejemplo@correo.com"/>
-    <div *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.invalid" class="error">
+    <section *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.invalid" class="error">
       Ingresa un correo válido.
-    </div>
+    </section>
     <label for="contrasena" class="registro-label">Contraseña</label>
     <input formControlName="contrasena" id="contrasena" type="password" class="registro-input"/>
-    <div *ngIf="registroForm.get('contrasena')?.touched && registroForm.get('contrasena')?.invalid" class="error">
+    <section *ngIf="registroForm.get('contrasena')?.touched && registroForm.get('contrasena')?.invalid" class="error">
       La contraseña debe tener al menos 6 caracteres.
-    </div>
+    </section>
     <label for="confirmarContrasena" class="registro-label">Confirmar Contraseña</label>
     <input formControlName="confirmarContrasena" id="confirmarContrasena" type="password" class="registro-input"/>
-    <div *ngIf="registroForm.hasError('noCoinciden') && registroForm.get('confirmarContrasena')?.touched" class="error">
+    <section *ngIf="registroForm.hasError('noCoinciden') && registroForm.get('confirmarContrasena')?.touched" class="error">
       Las contraseñas no coinciden.
-    </div>
+    </section>
 
     <button type="submit" class="registro-btn" [disabled]="registroForm.invalid">
       Registrarse
     </button>
 
     <p class="registro-texto">¿Ya tienes cuenta?</p>
-    <a class="registro-link" routerLink="/inicio/ingresar">Iniciar Sesión</a>
+    <a class="registro-link" routerLink="/ingresar">Iniciar Sesión</a>
   </form>
 </section>
 <app-footer></app-footer>

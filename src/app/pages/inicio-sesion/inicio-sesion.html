@@ -1,5 +1,6 @@
 <app-header></app-header>
-<div class="registro-contenedor">
+<app-accesibility></app-accesibility>
+<section class="registro-contenedor">
   <form [formGroup]="inicioSesion" (ngSubmit)="IniciarSesion()" class="registro-form">
     <h1 class="registro-titulo">Iniciar Sesión</h1>
     <img
@@ -16,10 +17,13 @@
       placeholder="miguel@correo.com"
       class="registro-input"
     />
-    <div class="error" *ngIf="correoControl?.invalid && (correoControl?.dirty || correoControl?.touched)">
+    <section
+      class="error"
+      *ngIf="correoControl?.invalid && (correoControl?.dirty || correoControl?.touched)"
+    >
       <small *ngIf="correoControl?.errors?.['required']">El correo es obligatorio.</small>
       <small *ngIf="correoControl?.errors?.['email']">Formato de correo inválido.</small>
-    </div>
+    </section>
     <label for="Contraseña" class="registro-label">Contraseña</label>
     <input
       formControlName="contrasena"
@@ -28,12 +32,15 @@
       name="contrasena"
       class="registro-input"
     />
-    <div class="error" *ngIf="contrasenaControl?.invalid && (contrasenaControl?.dirty || contrasenaControl?.touched)">
+    <section
+      class="error"
+      *ngIf="contrasenaControl?.invalid && (contrasenaControl?.dirty || contrasenaControl?.touched)"
+    >
       <small *ngIf="contrasenaControl?.errors?.['required']">La contraseña es obligatoria.</small>
       <small *ngIf="contrasenaControl?.errors?.['minlength']">
         La contraseña debe tener al menos 6 caracteres.
       </small>
-    </div>
+    </section>
 
     <div id="error" class="error"></div>
 
@@ -42,7 +49,7 @@
     </button>
 
     <p class="registro-texto">¿No tienes cuenta?</p>
-    <a class="registro-link" routerLink="/inicio/registro">Registrarse</a>
+    <a class="registro-link" routerLink="/registro">Registrarse</a>
   </form>
-</div>
+</section>
 <app-footer></app-footer>

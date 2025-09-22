@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HacerPeticion } from './hacer-peticion';
+import { Accessibility } from './accesibility';
 
-describe('HacerPeticion', () => {
-  let component: HacerPeticion;
-  let fixture: ComponentFixture<HacerPeticion>;
+describe('Accessibility', () => {
+  let component: Accessibility;
+  let fixture: ComponentFixture<Accessibility>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HacerPeticion]
+      imports: [Accessibility]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HacerPeticion);
+    fixture = TestBed.createComponent(Accessibility);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

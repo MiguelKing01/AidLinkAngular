@@ -21,7 +21,7 @@ a {
 
 .titulo {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 70px;
+  font-size: 4.375rem; 
   text-align: center;
   line-height: 1.4;
 }
@@ -29,7 +29,7 @@ a {
 .descripcion {
   font-family: 'Arial', sans-serif;
   text-align: center;
-  font-size: 35px;
+  font-size: 2.1875rem;
   font-weight: 300;
   line-height: 1.3;
   color: #1b1b1b;
@@ -58,10 +58,9 @@ a {
 }
 
 .como-funciona h2 {
-  font-size: 28px;
+  font-size: 1.75rem; 
   margin-bottom: 40px;
   position: relative;
- 
 }
 
 .como-funciona h2::after {
@@ -71,7 +70,6 @@ a {
   height: 0.5px;
   background: white;
   margin: 10px auto 0;
-   
   padding: 0 100px;
 }
 
@@ -97,7 +95,7 @@ a {
 }
 
 .funciona-item p {
-  font-size: 25px;
+  font-size: 1.5625rem;
   line-height: 1.5;
   font-weight: bold;
 }

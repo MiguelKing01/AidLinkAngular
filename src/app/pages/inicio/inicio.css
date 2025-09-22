@@ -1,8 +1,7 @@
-/* Inicio o Menu  */
 .contenido{
   padding: 50px 0;
 }
-/* Título */
+
 .acciones-titulo {
   text-align: center;
   font-size: 1.8rem;
@@ -11,17 +10,15 @@
   margin-bottom: 70px;
 }
 
-/* Contenedor en grid */
 .acciones-contenedor {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 2rem;
   max-width: 800px;
   
   margin: 0 auto 4rem auto;
 }
 
-/* Tarjeta */
 .accion-card {
   background: #fff;
   border-radius: 20px;
@@ -41,21 +38,18 @@
   transform: translateY(-5px);
 }
 
-/* Íconos */
 .accion-icono {
   width: 80px;
   height: 80px;
   margin-bottom: 1rem;
 }
 
-/* Título de cada card */
 .accion-titulo {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-/* Botón */
 .accion-boton {
   background: #e67e22;
   color: white;

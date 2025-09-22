@@ -15,14 +15,13 @@ export class Header2 {
   private routerSub: Subscription;
 
   constructor(private router: Router) {
-    // cerrar menú si hay navegación
     this.routerSub = this.router.events.subscribe(e => {
       if (e instanceof NavigationStart) { this.menuOpen = false; }
     });
   }
 
   toggleMenu(e: MouseEvent) {
-    e.stopPropagation(); // evita que document click cierre inmediatamente
+    e.stopPropagation(); 
     this.menuOpen = !this.menuOpen;
   }
 

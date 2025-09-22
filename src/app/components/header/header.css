@@ -1,9 +1,5 @@
-*{
-  font-family: 'Poppins', sans-serif;
-}
-
 .contenedor-header {
-  width: 93%;
+  width: 92%;
   display: flex;
   flex-direction: row;
   border-bottom: 3px solid #f28c38;
@@ -16,14 +12,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-right: 30px;
+  margin-right: 0px;
 }
 
 .container-menu ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 5px;
+  gap: 0px;
 }
 
 .ingreso {
@@ -33,7 +29,7 @@
   border-radius: 10px;
   background-color: #f28c38;
   color: white;
-  font-size: 13px;
+  font-size: 0.90rem; 
   font-weight: 600;
 }
 
@@ -51,7 +47,7 @@
   align-items: center;
   margin-top: 0px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.90rem; 
 }
 
 .text{
@@ -67,7 +63,8 @@
 
 .logo-text {
   height: 30px;
-  width: 10%;
+  width: 10.3%;
+  padding: 0 10px;
 }
 .logo-icon {
   height: 40px;

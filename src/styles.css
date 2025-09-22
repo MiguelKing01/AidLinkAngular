@@ -1,4 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*{
+    font-family: 'Poppins', sans-serif !important; 
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* =======================
+   MODO ALTO CONTRASTE
+   ======================= */
+body.contraste {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Header y Footer */
+body.contraste .contenedor-header {
+  background: #000 !important;
+  color: #ffd700 !important;
+  border-bottom: 2px solid #fff !important;
+}
+
+body.contraste .contenedor-footer {
+  background: #000 !important;
+  color: #ffd700 !important;
+  border-top: 2px solid #fff !important;
+}
+
+/* Títulos */
+body.contraste h1,
+body.contraste h2,
+body.contraste h3,
+body.contraste .titulo {
+  color: #ffd700 !important;
+}
+
+/* Descripciones, párrafos, textos secundarios */
+body.contraste p,
+body.contraste .descripcion,
+body.contraste .ayuda,
+body.contraste .registro-texto {
+  color: #00bfff !important;
+}
+
+/* Enlaces */
+body.contraste a,
+body.contraste .registro-link {
+  color: #00ffff !important;
+}
+
+/* Botones generales */
+body.contraste button,
+body.contraste .btn,
+body.contraste .login-btn,
+body.contraste .accion-boton,
+body.contraste .donar-btn,
+body.contraste .btn-enviar,
+body.contraste .registro-btn {
+  background: #ffd700 !important;
+  color: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+body.contraste button:hover,
+body.contraste .btn:hover,
+body.contraste .login-btn:hover,
+body.contraste .accion-boton:hover,
+body.contraste .donar-btn:hover,
+body.contraste .btn-enviar:hover,
+body.contraste .registro-btn:hover {
+  background: #f58220 !important;
+  color: #fff !important;
+}
+
+/* Formularios e inputs */
+body.contraste input,
+body.contraste textarea,
+body.contraste select,
+body.contraste .solicitud-input,
+body.contraste .donacion-input,
+body.contraste .registro-input {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #ffd700 !important;
+}
+
+body.contraste input::placeholder,
+body.contraste textarea::placeholder {
+  color: #aaa !important;
+}
+
+/* Sección "Como funciona" y otras áreas con color */
+body.contraste .como-funciona,
+body.contraste .registro-form,
+body.contraste .accion-card,
+body.contraste .donar-card,
+body.contraste .solicitud-form,
+body.contraste .donacion-form {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #ffd700 !important;
+}
+
+/* Imágenes con borde circular */
+body.contraste .funciona-item img,
+body.contraste .imagen-con-circulo::before {
+  border-color: #ffd700 !important;
+  background: #000 !important;
+}
