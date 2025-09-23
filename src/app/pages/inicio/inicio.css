@@ -65,3 +65,109 @@
 .accion-boton:hover {
   background: #e46b00;
 }
+
+
+@media (max-width: 1200px) {
+  .acciones-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 700px;
+  }
+
+  .accion-card {
+    padding: 1.8rem 1.2rem;
+    max-width: 280px;
+  }
+
+  .acciones-titulo {
+    font-size: 1.6rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .acciones-contenedor {
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.2rem;
+    max-width: 600px;
+  }
+
+  .accion-card {
+    padding: 1.5rem 1rem;
+    max-width: 260px;
+  }
+
+  .acciones-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .acciones-contenedor {
+    grid-template-columns: 1fr; 
+    max-width: 400px;
+    gap: 1.5rem;
+  }
+
+  .accion-card {
+    max-width: 100%;
+  }
+
+  .acciones-titulo {
+    font-size: 1.4rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .acciones-contenedor {
+    max-width: 95%;
+    gap: 1rem;
+  }
+
+  .acciones-titulo {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .accion-icono {
+    width: 70px;
+    height: 70px;
+  }
+
+  .accion-titulo {
+    font-size: 1rem;
+  }
+
+  .accion-boton {
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .acciones-contenedor {
+    max-width: 100%;
+    gap: 0.8rem;
+  }
+
+  .acciones-titulo {
+    font-size: 1.1rem;
+  }
+
+  .accion-icono {
+    width: 60px;
+    height: 60px;
+  }
+
+  .accion-titulo {
+    font-size: 0.9rem;
+  }
+
+  .accion-boton {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+}

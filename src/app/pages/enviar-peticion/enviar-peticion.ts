@@ -26,7 +26,7 @@ export class EnviarPeticion {
     fecha_peticion: new Date().toISOString().split('T')[0] as any,
     estado_peticion: 1,
     direccion: '',
-    nequi: 0,
+    nequi: '',
     usuario: { id: 0},
     categoriaId: 0,
   };

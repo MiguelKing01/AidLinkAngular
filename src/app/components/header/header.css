@@ -26,7 +26,7 @@
   border: none;
   font-weight: 500;
   padding: 8px 15px;
-  border-radius: 10px;
+  border-radius: 18px;
   background-color: #f28c38;
   color: white;
   font-size: 0.90rem; 
@@ -74,3 +74,93 @@
 a{
   text-decoration: none;
 }
+
+/* ====== Mobile (340px - 767px) ====== */
+@media (max-width: 767px) {
+  .contenedor-header {
+    flex-direction: column;   /* Logo arriba, menú abajo */
+    padding: 10px 20px;
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .container-logo {
+    justify-content: center;
+  }
+
+  .logo-icon {
+    height: 30px;
+    width: auto; /* deja que fluya */
+  }
+
+  .logo-text {
+    height: 22px;
+    width: auto;
+  }
+
+  .container-menu ul {
+    flex-direction: column; /* Menú vertical */
+    gap: 10px;
+    padding: 0;
+  }
+
+  .cajas {
+    margin-top: 5px;
+    font-size: 0.85rem;
+  }
+
+  .ingreso {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}
+
+/* ====== Tablet (768px - 1023px) ====== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contenedor-header {
+    flex-direction: row;
+    padding: 10px 40px;
+  }
+
+  .logo-icon {
+    height: 35px;
+    width: auto;
+  }
+
+  .logo-text {
+    height: 26px;
+    width: auto;
+  }
+
+  .container-menu ul {
+    gap: 15px; /* más espacio entre links */
+  }
+
+  .cajas {
+    font-size: 0.9rem;
+  }
+}
+
+/* ====== Desktop (>=1024px) ======
+@media (min-width: 1201px) {
+  .contenedor-header {
+    padding: 10px 60px;
+    width: 100%;
+  }
+
+  .logo-icon {
+    height: 40px;
+  }
+
+  .logo-text {
+    height: 30px;
+  }
+
+  .container-menu ul {
+    gap: 20px;
+  }
+
+  .cajas {
+    font-size: 1rem;
+  }
+} */

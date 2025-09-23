@@ -10,7 +10,7 @@ export interface Peticion {
   fecha_peticion: String;
   estado_peticion: number;
   direccion: string | null;
-  nequi: number | null;
+  nequi: string | null;
   usuario: { id: number };
   categoriaId: number;
   // usuario: {
@@ -52,4 +52,11 @@ export class PeticionService {
   actualizarPeticion(peticion: Peticion): Observable<Peticion> {
     return this.http.put<Peticion>(`${this.apiURL}/actualizar`, peticion);
   }
+
+  getPeticionesUsuario(idUsuario: number): Observable<Peticion[]> {
+  const headers = new HttpHeaders({
+    Authorization: 'Basic ' + btoa('client:123456'),
+  });
+  return this.http.get<Peticion[]>(`${this.apiURL}/idUsuario?idUsuario=${idUsuario}`, { headers });
+}
 }

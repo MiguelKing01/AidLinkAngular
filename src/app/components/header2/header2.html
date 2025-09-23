@@ -3,6 +3,7 @@
     <img src="images/logo-sin-nombre-fondo-blanco2.png" alt="Logo AidLink" class="logo-icon" />
     <img src="images/aidlink-letra.png" alt="Texto AidLink" class="logo-text" />
   </section>
+
   <nav class="container-menu">
     <ul>
       <li class="cajas"><a routerLink="/inicio" class="text">INICIO</a></li>
@@ -14,14 +15,18 @@
                 [attr.aria-expanded]="menuOpen">
           MENU
         </button>
-      
         <ul class="menu" *ngIf="menuOpen" role="menu" (click)="$event.stopPropagation()">
           <li role="menuitem"><a routerLink="/inicio/hacer-peticion">Hacer petición</a></li>
           <li role="menuitem"><a routerLink="/inicio/hacer-donacion">Hacer donación</a></li>
+          <li role="menuitem"><a routerLink="/inicio/ver-peticiones">Ver peticiones</a></li>
+          <li role="menuitem"><a routerLink="/inicio/ver-donaciones">Ver donaciones</a></li>
         </ul>
       </li>
-      
-      <li class="icono"><i class="bi bi-person-circle"></i></li>
+      <li class="icono">
+        <a [routerLink]="['/usuarios/actualizar', usuarioId]">
+          <i class="bi bi-person-circle"></i>
+        </a>
+      </li>
     </ul>
   </nav>
   <router-outlet></router-outlet>

@@ -34,7 +34,7 @@
       Las contraseñas no coinciden.
     </section>
 
-    <button type="submit" class="registro-btn" [disabled]="registroForm.invalid">
+    <button type="submit" class="registro-btn" (ngSubmit)="registrarUsuario()">
       Registrarse
     </button>
 

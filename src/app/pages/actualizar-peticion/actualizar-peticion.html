@@ -1,0 +1,52 @@
+<app-header2></app-header2>
+<app-accesibility></app-accesibility>
+
+<section class="solicitud-head">
+  <section class="solicitud-back" onclick="history.back()">
+    <img src="../images/back.png" alt="Icono regresar" class="solicitud-icon" />
+    <span class="solicitud-back-text">Regresar</span>
+  </section>
+  <nav class="solicitud-breadcrumb">
+    <a routerLink="/inicio">inicio ></a> 
+    <a routerLink="/inicio/mis-peticiones"> mis peticiones</a>
+  </nav>
+</section>
+
+<section class="solicitud-container">
+  <form class="solicitud-form">
+    <h3 class="solicitud-titulo">Actualizar Petición</h3>
+
+    <label for="nombre" class="solicitud-label">Nombre Petición</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" class="solicitud-input" />
+
+    <label for="Descripcion" class="solicitud-label">Descripción</label>
+    <input type="text" id="Descripcion" name="descripcion" [(ngModel)]="NuevaPeticion.desc_peticion" class="solicitud-input" />
+
+    <label for="Tdonacion" class="solicitud-label">Tipo de donación</label>
+    <select id="Tdonacion" [(ngModel)]="NuevaPeticion.categoriaId" name="Tipo" (change)="CategoriaPeticion()" class="solicitud-input-t">
+      <option value="">Seleccione...</option>
+      <option value="1">Objeto</option>
+      <option value="2">Dinero</option>
+    </select>
+
+    <section *ngIf="mostrarDireccion">
+      <label for="Direccion" class="solicitud-label">Dirección</label>
+      <input type="text" name="direccion" id="Direccion" [(ngModel)]="NuevaPeticion.direccion" class="solicitud-input" />
+    </section>
+
+    <section *ngIf="!mostrarDireccion">
+      <label for="nequi" class="solicitud-label">Número de Nequi</label>
+      <input type="text" name="nequi" id="nequi" [(ngModel)]="NuevaPeticion.nequi" class="solicitud-input" />
+    </section>
+
+    <label for="cantidad" class="solicitud-label">Cantidad</label>
+    <input type="number" name="cantidad" id="cantidad" [(ngModel)]="NuevaPeticion.cantidad_peticion" class="solicitud-input" />
+
+    <section class="solicitud-botones">
+      <button type="button" class="btn-cancelar" (click)="router.navigate(['/inicio/mis-peticiones'])">Cancelar</button>
+      <button type="button" (click)="actualizarPeticion()" class="btn-enviar">Actualizar</button>
+    </section>
+  </form>
+</section>
+
+<app-footer></app-footer>

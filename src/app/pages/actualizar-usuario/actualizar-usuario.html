@@ -1,0 +1,38 @@
+<app-header2></app-header2>
+<app-accesibility></app-accesibility>
+
+<section class="solicitud-head">
+  <section class="solicitud-back" (click)="router.navigate(['/usuarios'])">
+    <img src="../images/back.png" alt="Icono regresar" class="solicitud-icon" />
+    <span class="solicitud-back-text">Regresar</span>
+  </section>
+  <nav class="solicitud-breadcrumb">
+    <a routerLink="/usuarios">Usuarios ></a>
+    <span>Actualizar Usuario</span>
+  </nav>
+</section>
+
+<section class="solicitud-container">
+  <form class="solicitud-form">
+    <h3 class="solicitud-titulo">Actualizar Usuario</h3>
+
+    <label for="nombre" class="solicitud-label">Nombre</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" class="solicitud-input" />
+
+    <label for="apellido" class="solicitud-label">Apellido</label>
+    <input type="text" id="apellido" name="apellido" [(ngModel)]="usuario.apellido" class="solicitud-input" />
+
+    <label for="correo" class="solicitud-label">Correo</label>
+    <input type="email" id="correo" name="correo" [(ngModel)]="usuario.correo" class="solicitud-input" />
+
+    <label for="contrasena" class="solicitud-label">Contraseña</label>
+    <input type="password" id="contrasena" name="contrasena" [(ngModel)]="usuario.contrasena" class="solicitud-input" />
+
+    <section class="solicitud-botones">
+      <button type="button" class="btn-cancelar" (click)="router.navigate(['/usuarios'])">Cancelar</button>
+      <button type="button" class="btn-enviar" (click)="actualizarUsuario()">Actualizar</button>
+    </section>
+  </form>
+</section>
+
+<app-footer></app-footer>

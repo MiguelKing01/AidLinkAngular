@@ -1,0 +1,30 @@
+.primerSeccion{
+    margin-top: 100px;
+}
+
+.Detalles {
+  background-color: transparent; 
+  border-left: 5px solid #ff8c00; 
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.Detalles h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3em;
+  color: #ff6600;
+}
+
+.Detalles p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #333;
+}
+
+.tt{
+  color: #ff6600;
+}

@@ -28,23 +28,31 @@ export class UsuarioService {
     const headers = new HttpHeaders({
       Authorization: 'Basic ' + btoa('client:123456'),
     });
-    return this.http.post<Usuario[]>(`${this.apiUrl}/crear`, usuario, {headers});
+    return this.http.post<Usuario[]>(`${this.apiUrl}/crear`, usuario, { headers });
   }
 
-  getUsuarioId(id: number): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/${id}`);
+  getUsuarioId(id: number): Observable<Usuario> {
+    const headers = new HttpHeaders({
+      Authorization: 'Basic ' + btoa('client:123456'),
+    });
+    return this.http.get<Usuario>(`${this.apiUrl}/${id}`, { headers, withCredentials: true });
   }
 
   actualizarUsuario(usuario: Usuario): Observable<Usuario> {
-    return this.http.put<Usuario>(`${this.apiUrl}/actualizar`, usuario);
+    const headers = new HttpHeaders({
+      Authorization: 'Basic ' + btoa('client:123456'),
+    });
+    return this.http.put<Usuario>(`${this.apiUrl}/actualizar`, usuario, {
+      headers,
+      withCredentials: true,
+    });
   }
 
   setUsuarioId(id: number) {
     this.usuarioIdActual = id;
   }
 
-  getUsuarioIdActual(): number{
+  getUsuarioIdActual(): number {
     return this.usuarioIdActual;
   }
-  
 }

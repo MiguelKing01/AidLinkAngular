@@ -22,8 +22,8 @@ export class DonacionService {
 
   constructor(private http: HttpClient) {}
 
-  getDonaciones(): Observable<Donacion> {
-    return this.http.get<Donacion>(`${this.UrlAPI}/todos`);
+  getDonaciones(): Observable<Donacion[]> {
+    return this.http.get<Donacion[]>(`${this.UrlAPI}/todos`);
   }
 
   crearDonacion(donacion: Donacion): Observable<Donacion> {

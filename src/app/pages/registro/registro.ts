@@ -42,9 +42,11 @@ export class Registro {
 
   registrarUsuario() {
     if (this.registroForm.valid) {
+      const { confirmarContrasena, ...payload } = this.registroForm.value;
       this.usuarioService.crearUsuario(this.registroForm.value).subscribe({
         next: () => {
-          this.router.navigate(['/inicio/ingresar']);
+          alert("Usuario creado con exito");
+          this.router.navigate(['/ingresar']);
         },
         error: (err) => {
           console.error('Error al registrar usuario', err);

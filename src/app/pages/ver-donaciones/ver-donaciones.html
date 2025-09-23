@@ -1,0 +1,27 @@
+<app-header2></app-header2>
+<app-accesibility></app-accesibility>
+
+<section class="primerSeccion">
+  <section *ngIf="cargando">
+    <p>Cargando tus donaciones...</p>
+  </section>
+
+  <section *ngIf="!cargando && Donaciones.length === 0">
+    <p>No tienes donaciones aún.</p>
+  </section>
+
+  <section *ngIf="!cargando && Donaciones.length > 0">
+    <div class="Detalles" *ngFor="let donacion of Donaciones">
+      <h3>{{ donacion.desc_Donacion }}</h3>
+      <p><span class="tt">Fecha: </span>{{ donacion.fecha_Donacion }}</p>
+      <p><span class="tt">Cantidad: </span>{{ donacion.cantidad_Donacion }}</p>
+      <p *ngIf="donacion.direccion"><span class="tt">Dirección: </span>{{ donacion.direccion }}</p>
+      <button type="button">
+        <a [routerLink]="['/ver-donacion/detalles', donacion.id_Donacion]">Editar</a>
+      </button>
+    </div>
+  </section>
+</section>
+
+<app-footer></app-footer>
+

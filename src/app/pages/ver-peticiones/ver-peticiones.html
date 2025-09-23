@@ -1,0 +1,26 @@
+<app-header2></app-header2>
+<app-accesibility></app-accesibility>
+
+<section class="primerSeccion">
+  <section *ngIf="cargando">
+    <p>Cargando tus peticiones...</p>
+  </section>
+
+  <section *ngIf="!cargando && Peticiones.length === 0">
+    <p>No tienes peticiones aún.</p>
+  </section>
+
+  <section *ngIf="!cargando && Peticiones.length > 0">
+    <div class="Detalles" *ngFor="let peticion of Peticiones">
+      <h3>{{ peticion.nombre_peticion }}</h3>
+      <p><span class="tt">Fecha: </span>{{ peticion.fecha_peticion }}</p>
+      <p><span class="tt">Descripción: </span>{{ peticion.desc_peticion }}</p>
+      <p><span class="tt">Cantidad: </span>{{ peticion.cantidad_peticion }}</p>
+      <p *ngIf="peticion.direccion"><span class="tt">Dirección: </span>{{ peticion.direccion }}</p>
+      <p *ngIf="peticion.nequi"><span class="tt">Nequi: </span>{{ peticion.nequi }}</p>
+      <button type="button"><a [routerLink]="['/ver-peticion/detalles', peticion.id_peticion]">Editar</a></button>
+    </div>
+  </section>
+</section>
+
+<app-footer></app-footer>

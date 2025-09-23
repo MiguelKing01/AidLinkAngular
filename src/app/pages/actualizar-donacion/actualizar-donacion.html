@@ -1,0 +1,44 @@
+<app-header2></app-header2>
+<app-accesibility></app-accesibility>
+
+<section class="solicitud-head">
+  <section class="solicitud-back" onclick="history.back()">
+    <img src="../images/back.png" alt="Icono regresar" class="solicitud-icon" />
+    <span class="solicitud-back-text">Regresar</span>
+  </section>
+  <nav class="solicitud-breadcrumb">
+    <a routerLink="/inicio">inicio ></a> 
+    <a routerLink="/inicio/mis-donaciones"> mis donaciones</a>
+  </nav>
+</section>
+
+<section class="solicitud-container">
+  <form class="solicitud-form">
+    <h3 class="solicitud-titulo">Actualizar Donación</h3>
+
+    <label for="Descripcion" class="solicitud-label">Descripción</label>
+    <input type="text" id="Descripcion" name="descripcion" [(ngModel)]="NuevaDonacion.desc_Donacion" class="solicitud-input" />
+
+    <label for="Tdonacion" class="solicitud-label">Tipo de donación</label>
+    <select id="Tdonacion" [(ngModel)]="NuevaDonacion.categoriaId" name="Tipo" (change)="CategoriaDonacion()" class="solicitud-input-t">
+      <option value="">Seleccione...</option>
+      <option value="1">Objeto</option>
+      <option value="2">Dinero</option>
+    </select>
+
+    <section *ngIf="mostrarDireccion">
+      <label for="Direccion" class="solicitud-label">Dirección</label>
+      <input type="text" name="direccion" id="Direccion" [(ngModel)]="NuevaDonacion.direccion" class="solicitud-input" />
+    </section>
+
+    <label for="cantidad" class="solicitud-label">Cantidad</label>
+    <input type="number" name="cantidad" id="cantidad" [(ngModel)]="NuevaDonacion.cantidad_Donacion" class="solicitud-input" />
+
+    <section class="solicitud-botones">
+      <button type="button" class="btn-cancelar" (click)="router.navigate(['/inicio/mis-donaciones'])">Cancelar</button>
+      <button type="button" (click)="actualizarDonacion()" class="btn-enviar">Actualizar</button>
+    </section>
+  </form>
+</section>
+
+<app-footer></app-footer>

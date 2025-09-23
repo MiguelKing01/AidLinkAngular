@@ -1,46 +1,39 @@
 .principal {
-  padding: 20px;
-}
-
-.volver {
-  display: flex;
-  flex-direction: row;
+  padding: 15px;
 }
 
 .solicitud-head {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 40px;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px;
 }
 
 .solicitud-back {
   display: flex;
-  flex-direction: column;  
+  flex-direction: row;
   align-items: center;     
   cursor: pointer;
-  text-decoration: none;
-  gap: 4px;                
+  gap: 8px;                
 }
 
 .solicitud-icon {
-  width: 40px;             
+  width: 30px;             
   height: auto;
   display: block;
 }
 
 .solicitud-back-text {
-  font-size: 1rem; 
+  font-size: 0.9rem; 
   font-weight: 600;
   color: #e67e22;
   margin: 0;
 }
 
 .solicitud-breadcrumb {
-  font-size: 0.875rem; 
+  font-size: 0.8rem; 
   color: #444;
   white-space: nowrap;
-  cursor: pointer;
 }
 
 .solicitud-breadcrumb a {
@@ -49,26 +42,6 @@
   font-weight: 500;
 }
 
-.icon{
-    i{
-        font-size: 40px;
-        color: rgb(255, 135, 55);
-    }
-}
-
-.back {
-  color: rgb(255, 135, 55);
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.texto {
-  flex: 1;
-  display: flex;
-  justify-content: end;
-  color: rgb(255, 135, 55);
-  font-weight: 600;
-}
 .contenido {
   display: flex;
   justify-content: center;
@@ -77,38 +50,41 @@
 }
 
 .header {
-  font-size: 25px;
-  margin: 30px 0;
+  font-size: 22px;
+  margin: 20px 0;
+  text-align: center;
 }
 
 .caja {
-  width: 80%;
+  width: 90%;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 20px;
   border: 1px solid thistle;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 0 3px 1px grey;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
 .donacion {
-  font-size: 25px;
-  margin-left: 100px;
+  font-size: 18px;
+  margin-left: 20px;
   color: grey;
 }
 
 .btn {
-  padding: 15px 60px;
-  margin-left: 30px;
+  padding: 10px 40px;
+  margin-left: 15px;
   border: none;
   background-color: rgb(255, 135, 55);
-  border-radius: 16px;
+  border-radius: 12px;
   color: white;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.3s ease;
 }
 
@@ -126,4 +102,54 @@
 a{
   text-decoration: none;
   color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .caja {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .donacion {
+    margin-left: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .solicitud-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 20px;
+  }
+
+  .donacion {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 8px 25px;
+    font-size: 13px;
+  }
+
+  .solicitud-back-text {
+    font-size: 0.8rem;
+  }
+
+  .solicitud-icon {
+    width: 25px;
+  }
 }

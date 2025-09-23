@@ -1,23 +1,24 @@
+import { Component, HostListener, OnInit } from '@angular/core';
+import { UsuarioService } from '../../services/usuario';
+import { Subscription } from 'rxjs';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, NgModule } from '@angular/core';
-import { NavigationStart, Router, RouterLink, RouterOutlet } from '@angular/router';
-import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-header2',
-  imports: [RouterOutlet, RouterLink, CommonModule],
   templateUrl: './header2.html',
-  styleUrl: './header2.css'
+  imports: [RouterModule, CommonModule],
+  styleUrls: ['./header2.css']
 })
+export class Header2 implements OnInit {
+  menuOpen: boolean = false;
+  private routerSub!: Subscription;
+  usuarioId: number = 0;
 
-export class Header2 {
-  menuOpen = false;
-  private routerSub: Subscription;
+  constructor(private usuarioService: UsuarioService) {}
 
-  constructor(private router: Router) {
-    this.routerSub = this.router.events.subscribe(e => {
-      if (e instanceof NavigationStart) { this.menuOpen = false; }
-    });
+  ngOnInit() {
+    this.usuarioId = this.usuarioService.getUsuarioIdActual(); // obtiene el id del usuario
   }
 
   toggleMenu(e: MouseEvent) {

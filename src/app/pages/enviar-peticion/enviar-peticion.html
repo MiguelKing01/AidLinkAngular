@@ -38,7 +38,7 @@
 
       <section *ngIf="!mostrarDireccion">
         <label for="nequi" class="solicitud-label">Número de Nequi</label>
-        <input type="number" name="nequi" id="nequi" [(ngModel)]="NuevaPeticion.nequi" class="solicitud-input" />
+        <input type="text" name="nequi" id="nequi" [(ngModel)]="NuevaPeticion.nequi" class="solicitud-input" />
       </section>
 
       <label for="cantidad" class="solicitud-label">NCantidad</label>
@@ -50,52 +50,4 @@
       </section>
     </form>
   </section>
-
-  <!-- <section class="content">
-    <article class="contenido">
-      <header class="header"><h1>Solicitar Ayuda</h1></header>
-      <section class="cajas">
-        <section class="caja">
-          <label for="nombre" class="text">Nombre peticion</label> <br />
-          <input id="nombre" [(ngModel)]="NuevaPeticion.nombre_peticion" type="text" class="input" />
-        </section>
-        <section class="caja">
-          <label for="descripcion" class="text">descripción</label> <br />
-          <input [(ngModel)]="NuevaPeticion.desc_peticion" type="text" class="input" />
-        </section>
-        <section class="caja">
-          <label for="Tipo" class="text">Tipo</label> <br />
-          <select
-            [(ngModel)]="NuevaPeticion.categoriaId"
-            name="Tipo"
-            id="Tipo"
-            class="input"
-            (change)="CategoriaPeticion()"
-          >
-            <option value="1">Objeto</option>
-            <option value="2">Dinero</option>
-          </select>
-        </section>
-        <section class="caja" *ngIf="mostrarDireccion">
-          <label for="direccion" class="text">Dirección</label> <br />
-          <input [(ngModel)]="NuevaPeticion.direccion" type="text" class="input" />
-        </section>
-        <section class="caja" *ngIf="mostrarDireccion == false">
-          <label class="text" for="nequi">Numero de nequi</label><br>
-          <input class="input" type="number" [(ngModel)]="NuevaPeticion.nequi" name="nequi">
-        </section>
-        <section class="caja">
-          <label for="cantidad" class="text">Cantidad</label> <br />
-          <input [(ngModel)]="NuevaPeticion.cantidad_peticion" type="number" class="input" />
-        </section>
-        <section class="botones">
-          <figure class="btn1"><button class="cancelar">Cancelar</button> <br /></figure>
-          <figure class="btn2">
-            <button (click)="crearPeticion()" class="enviar">Enviar</button>
-          </figure>
-        </section>
-      </section>
-    </article>
-  </section> -->
-<!-- </section> -->
 <app-footer></app-footer>

@@ -39,6 +39,7 @@
   color: #e86f2f;
   font-weight: 500;
 }
+
 .solicitud-container {
   display: flex;
   justify-content: center;
@@ -228,7 +229,6 @@
 
 .btn-cancelar {
   background: #f5f5f5;
-  font-size: 0.8rem;
   color: #333;
 }
 
@@ -239,132 +239,8 @@
 .btn-enviar {
   background: #e67e22;
   color: #fff;
-  font-size: 0.8rem;
 }
 
 .btn-enviar:hover {
   background: #d85e20;
-}
-
-/* 🔹 Hasta 1200px */
-@media (max-width: 1200px) {
-  .solicitud-head {
-    margin: 15px 30px;
-  }
-
-  .solicitud-form {
-    width: 500px;
-  }
-}
-
-/* 🔹 Hasta 991px */
-@media (max-width: 991px) {
-  .solicitud-head {
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 15px 20px;
-    gap: 10px;
-  }
-
-  .solicitud-breadcrumb {
-    font-size: 0.8rem;
-    white-space: normal;
-  }
-
-  .solicitud-form {
-    width: 80%;
-    padding: 25px;
-    border-radius: 30px;
-  }
-
-  .solicitud-input,
-  .solicitud-input-t {
-    width: 100%;
-  }
-
-  .solicitud-botones {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .btn-cancelar,
-  .btn-enviar {
-    width: 100%;
-  }
-}
-
-/* 🔹 Hasta 768px */
-@media (max-width: 768px) {
-  .solicitud-head {
-    margin: 10px 15px;
-  }
-
-  .solicitud-form {
-    width: 90%;
-    margin: 20px;
-    border-radius: 25px;
-  }
-
-  .solicitud-titulo {
-    font-size: 1.1rem;
-  }
-
-  .solicitud-label {
-    font-size: 0.9rem;
-  }
-
-  .solicitud-input,
-  .solicitud-input-t {
-    font-size: 0.9rem;
-  }
-
-  .btn-cancelar,
-  .btn-enviar {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-}
-
-/* 🔹 Hasta 576px */
-@media (max-width: 576px) {
-  .solicitud-head {
-    margin: 10px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .solicitud-back {
-    flex-direction: row;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .solicitud-input,
-  .solicitud-input-t {
-    width: 90%;
-  }
-
-  .solicitud-icon {
-    width: 30px;
-  }
-
-  .solicitud-back-text {
-    font-size: 0.9rem;
-  }
-
-  .solicitud-breadcrumb {
-    font-size: 0.75rem;
-  }
-
-  .solicitud-form {
-    width: 80%;
-    padding: 15px;
-    border-radius: 20px;
-  }
-
-  .btn-cancelar,
-  .btn-enviar {
-    font-size: 0.85rem;
-    padding: 8px;
-  }
 }
