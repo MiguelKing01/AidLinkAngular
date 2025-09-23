@@ -16,9 +16,10 @@
       <p><span class="tt">Fecha: </span>{{ donacion.fecha_Donacion }}</p>
       <p><span class="tt">Cantidad: </span>{{ donacion.cantidad_Donacion }}</p>
       <p *ngIf="donacion.direccion"><span class="tt">Dirección: </span>{{ donacion.direccion }}</p>
-      <button type="button">
+      <!-- <button type="button">
         <a [routerLink]="['/ver-donacion/detalles', donacion.id_Donacion]">Editar</a>
-      </button>
+      </button> -->
+      <button> <a routerLink="/inicio/envio">Envio</a></button>
     </div>
   </section>
 </section>

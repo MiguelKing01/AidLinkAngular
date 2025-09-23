@@ -7,7 +7,6 @@ import { HacerDonacion } from './pages/hacer-donacion/hacer-donacion';
 import { Postulacion } from './pages/postulacion/postulacion';
 import { EnviarDonacion } from './pages/enviar-donacion/enviar-donacion';
 import { EnviarPeticion } from './pages/enviar-peticion/enviar-peticion';
-import { authGuard } from './guardas/auth-guard';
 import { Nosotros } from './pages/nosotros/nosotros';
 import { VerPeticiones } from './pages/ver-peticiones/ver-peticiones';
 import { VerDonaciones } from './pages/ver-donaciones/ver-donaciones';
