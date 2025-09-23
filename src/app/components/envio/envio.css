@@ -1,0 +1,74 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.envio-container {
+  border: 1px solid #ccc;
+  padding: 30px 10px;
+  border-radius: 30px;
+  background: #f9f9f9;
+  min-width: 400px;
+  box-shadow: 2px 2px 10px thistle;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px 0 0;
+    font-size: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+input {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input:focus{
+    border: 2px solid #f28c38;
+    outline: none;
+}
+
+label{
+    font-size: 15px;
+}
+
+button {
+  background: #f28c38;
+  color: white;
+  border: none;
+  padding: 8px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 16px;
+  width: 40%;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0;
+}
+
+button:hover {
+  background: #ff7300;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

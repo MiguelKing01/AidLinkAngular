@@ -1,0 +1,30 @@
+<app-header2></app-header2>
+<section class="contenedor">
+  <article class="envio-container">
+    <h2>Realizar Envío</h2>
+
+    <form (ngSubmit)="calcularRuta()">
+      <label for="fecha">Seleccione la fecha</label>
+      <input type="date" id="fecha" [(ngModel)]="fecha" name="fecha" required />
+
+      <label>Dirección de Origen:</label>
+      <input type="text" [(ngModel)]="origen" name="origen" required />
+
+      <label>Dirección de Destino:</label>
+      <input type="text" [(ngModel)]="destino" name="destino" required />
+
+      <section class="btn">
+        <button type="submit">Continuar</button>
+      </section>
+    </form>
+
+    <div *ngIf="cargando">Cargando información del trayecto...</div>
+
+    <div *ngIf="distancia && duracion" class="result">
+        <p><strong>La fecha es: </strong> {{ fecha }}</p>
+      <p><strong>Distancia:</strong> {{ distancia | number : '1.2-2' }} km</p>
+      <p><strong>Duración estimada:</strong> {{ duracion | number : '1.0-0' }} min</p>
+    </div>
+  </article>
+</section>
+<app-footer></app-footer>

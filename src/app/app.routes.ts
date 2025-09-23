@@ -7,13 +7,13 @@ import { HacerDonacion } from './pages/hacer-donacion/hacer-donacion';
 import { Postulacion } from './pages/postulacion/postulacion';
 import { EnviarDonacion } from './pages/enviar-donacion/enviar-donacion';
 import { EnviarPeticion } from './pages/enviar-peticion/enviar-peticion';
-import { authGuard } from './guardas/auth-guard';
 import { Nosotros } from './pages/nosotros/nosotros';
 import { VerPeticiones } from './pages/ver-peticiones/ver-peticiones';
 import { VerDonaciones } from './pages/ver-donaciones/ver-donaciones';
 import { ActualizarPeticion } from './pages/actualizar-peticion/actualizar-peticion';
 import { ActualizarDonacion } from './pages/actualizar-donacion/actualizar-donacion';
 import { ActualizarUsuario } from './pages/actualizar-usuario/actualizar-usuario';
+import { Envio } from './components/envio/envio';
 
 export const routes: Routes = [
     { path: '', component:Contenido },
@@ -29,5 +29,6 @@ export const routes: Routes = [
     { path: 'inicio/ver-donaciones', component:VerDonaciones},
     { path: 'ver-donacion/detalles/:id', component:ActualizarDonacion},
     { path: 'usuarios/actualizar/:id', component: ActualizarUsuario},
-    { path: 'nosotros', component: Nosotros}
+    { path: 'nosotros', component: Nosotros},
+    { path: 'inicio/envio', component: Envio}
 ];
