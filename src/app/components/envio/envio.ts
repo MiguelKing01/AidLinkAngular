@@ -17,6 +17,7 @@ import { Header2 } from '../header2/header2';
 export class Envio {
   origen: string = '';
   destino: string = '';
+  fecha: string = '';
   distancia: number | null = null;
   duracion: number | null = null;
   cargando = false;
