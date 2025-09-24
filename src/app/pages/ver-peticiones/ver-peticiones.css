@@ -28,3 +28,41 @@
 .tt{
   color: #ff6600;
 }
+
+.btn {
+  background: linear-gradient(135deg, #ff6600, #ff944d);
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #e65c00, #ff8533);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.tp{
+  width: 100%;
+  text-align: center;
+  color: black;
+  margin-bottom: 40px;
+}

@@ -6,6 +6,10 @@
     <p>Cargando tus peticiones...</p>
   </section>
 
+  <section class="tp">
+    <h2>Mis Peticiones</h2>
+  </section>
+
   <section *ngIf="!cargando && Peticiones.length === 0">
     <p>No tienes peticiones aún.</p>
   </section>
@@ -18,7 +22,7 @@
       <p><span class="tt">Cantidad: </span>{{ peticion.cantidad_peticion }}</p>
       <p *ngIf="peticion.direccion"><span class="tt">Dirección: </span>{{ peticion.direccion }}</p>
       <p *ngIf="peticion.nequi"><span class="tt">Nequi: </span>{{ peticion.nequi }}</p>
-      <button type="button"><a [routerLink]="['/ver-peticion/detalles', peticion.id_peticion]">Editar</a></button>
+      <button type="button" class="btn"><a [routerLink]="['/ver-peticion/detalles', peticion.id_peticion]">Editar</a></button>
     </div>
   </section>
 </section>

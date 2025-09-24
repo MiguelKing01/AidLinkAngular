@@ -6,6 +6,10 @@
     <p>Cargando tus donaciones...</p>
   </section>
 
+  <section class="tp">
+    <h2>Mis Donaciones</h2>
+  </section>
+
   <section *ngIf="!cargando && Donaciones.length === 0">
     <p>No tienes donaciones aún.</p>
   </section>
@@ -19,7 +23,7 @@
       <!-- <button type="button">
         <a [routerLink]="['/ver-donacion/detalles', donacion.id_Donacion]">Editar</a>
       </button> -->
-      <button> <a routerLink="/inicio/envio">Envio</a></button>
+      <button class="btn"> <a routerLink="/inicio/envio">Enviar</a></button>
     </div>
   </section>
 </section>

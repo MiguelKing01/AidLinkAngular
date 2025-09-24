@@ -3,12 +3,17 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  //Logica de autentificación 
-  const permitido = false;
-  if(!permitido){
-    alert('ACCESO DENEGADO');
-    router.navigateByUrl('/');
+
+  if (state.url === '/principal') {
+    return true;
+  }
+
+  if (!router.getCurrentNavigation()) {
+    router.navigateByUrl('/principal');
     return false;
   }
+
   return true;
 };
+
+
