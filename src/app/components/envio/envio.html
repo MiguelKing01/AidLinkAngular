@@ -1,11 +1,25 @@
+<!-- src/app/components/envio/envio.component.html -->
 <app-header2></app-header2>
 <section class="contenedor">
   <article class="envio-container">
     <h2>Realizar Envío</h2>
 
-    <form (ngSubmit)="calcularRuta()">
+    <form (ngSubmit)="crearPedido()">
       <label for="fecha">Seleccione la fecha</label>
-      <input type="date" id="fecha" [(ngModel)]="fecha" name="fecha" required />
+      <input type="date" id="fecha" [(ngModel)]="fecha" name="fecha" required>
+
+      <label>Franja horaria</label>
+      <select [(ngModel)]="selectedSlot" name="selectedSlot">
+        <option *ngFor="let s of predefinedSlots" [ngValue]="s">{{ s.label }}</option>
+        <option [ngValue]="null">Personalizada</option>
+      </select>
+
+      <div *ngIf="!selectedSlot">
+        <label>Inicio (HH:MM)</label>
+        <input type="time" [(ngModel)]="customStart" name="customStart" required />
+        <label>Fin (HH:MM)</label>
+        <input type="time" [(ngModel)]="customEnd" name="customEnd" required />
+      </div>
 
       <label>Dirección de Origen:</label>
       <input type="text" [(ngModel)]="origen" name="origen" required />
@@ -14,17 +28,51 @@
       <input type="text" [(ngModel)]="destino" name="destino" required />
 
       <section class="btn">
-        <button type="submit">Continuar</button>
+        <button type="submit">Generar Envio</button>
       </section>
     </form>
 
-    <div *ngIf="cargando">Cargando información del trayecto...</div>
+    <div *ngIf="message">{{ message }}</div>
 
-    <div *ngIf="distancia && duracion" class="result">
-        <p><strong>La fecha es: </strong> {{ fecha }}</p>
-      <p><strong>Distancia:</strong> {{ distancia | number : '1.2-2' }} km</p>
-      <p><strong>Duración estimada:</strong> {{ duracion | number : '1.0-0' }} min</p>
+  <div class="boton-modal">
+    <label for="btn-modal">Envios</label>
+  </div>
+
+  <input type="checkbox" id="btn-modal">
+  <div class="container-modal">
+    <div class="content modal">
+      <article class="envio-container">
+        <header class="header"><h2>Ver Envios</h2></header>
+        <ul>
+          <li *ngFor="let p of pedidos">
+            <strong>{{ p.origen }} → {{ p.destino }}</strong>
+            <p>Fecha: {{ p.fecha }} | Franja: {{ p.slotStart }} - {{ p.slotEnd }} ({{ p.slotLabel || 'Personalizada' }})</p>
+            <p>Estado: <strong>{{ p.status }}</strong></p>
+            <p *ngIf="p.status === 'pendiente'">Programado para: {{ p.scheduledStartAt | date:'short' }}</p>
+            <p *ngIf="p.status === 'enviado'">Enviado: {{ p.sentAt | date:'short' }} | Llegada estimada: {{ p.receivedAt ? (p.receivedAt | date:'short') : 'calculando' }}</p>
+            <p *ngIf="p.status === 'recibido'">Recibido: {{ p.receivedAt | date:'short' }}</p>
+          </li>
+        </ul>
+      </article>
+      <div class="btn-cerrar">
+        <label for="btn-modal">Cerrar</label>
+      </div>
     </div>
+  </div>
+
   </article>
+  <!-- <article class="envio-container">
+    <h3>Envios</h3>
+    <ul>
+      <li *ngFor="let p of pedidos">
+        <strong>{{ p.origen }} → {{ p.destino }}</strong>
+        <div>Fecha: {{ p.fecha }} | Franja: {{ p.slotStart }} - {{ p.slotEnd }} ({{ p.slotLabel || 'Personalizada' }})</div>
+        <div>Estado: <strong>{{ p.status }}</strong></div>
+        <div *ngIf="p.status === 'pendiente'">Programado para: {{ p.scheduledStartAt | date:'short' }}</div>
+        <div *ngIf="p.status === 'enviado'">Enviado: {{ p.sentAt | date:'short' }} | Llegada estimada: {{ p.receivedAt ? (p.receivedAt | date:'short') : 'calculando' }}</div>
+        <div *ngIf="p.status === 'recibido'">Recibido: {{ p.receivedAt | date:'short' }}</div>
+      </li>
+    </ul>
+  </article> -->
 </section>
 <app-footer></app-footer>
